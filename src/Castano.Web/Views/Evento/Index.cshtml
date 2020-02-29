@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Eventos Castano";
+}
+@section content {
+    @Html.Partial("_DatatablesContent")
+}
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="@Url.Action("Index", "Home")">
+            <img alt="castano&asociados" src="~/img/logo.jpg" style="max-width: 250px" />
+        </a>
+    </div>
+</nav>
+<!--Table-->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mx-auto text-center">
+                <h2 class="section-heading text-primary">Nuestros Eventos</h2>
+                <hr class="my-4">
+                <table id="table" class="table table-striped table-bordered" style="width:100%;">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Día</th>
+                            <th>Cliente</th>
+                            <th>Salón</th>
+                            <th>Nombre</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Carrusel-->
+<section class="bg-primary" id="eventos">
+    <div class="container-fluid text-center p-0">
+        <h2 class="section-heading text-white">Destacados</h2>
+        <hr class="light my-4">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active" style="background-image: url('img/carousel01.jpg')">
+                    <div class="carousel-caption d-none d-sm-block carousel-text">
+                        <h3>IDEA</h3>
+                        <h5>26 de julio de 2016 / Salón Francés, RESTAURANT MERCURIO</h5>
+                        <p>IDEA Centro realiza la 3er. Cena Foro del Ciclo 2016.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('img/carousel02.jpg')">
+                    <div class="carousel-caption d-none d-sm-block carousel-text">
+                        <h3>GRUPO BLUM</h3>
+                        <h5>24 de julio de 2015 / Salón Barcelona, RIVIERA PALACE HOTEL</h5>
+                        <p>Almuerzo "Día del Amigo" con que el GRUPO BLUM agasaja a sus clientes frecuentes.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('img/carousel03.jpg')">
+                    <div class="carousel-caption d-none d-sm-block carousel-text">
+                        <h3>BIOTOSCANA</h3>
+                        <h5>22 de julio de 2016 / Salón Lamorak, HOLIDAY INN</h5>
+                        <p>Seminario "Actualización en HAP 2016".</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Prev</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+@section scripts {
+    @Html.Partial("_DatatablesScripts")
+    @Html.Partial("_DatatablesStartup", "table")
+}

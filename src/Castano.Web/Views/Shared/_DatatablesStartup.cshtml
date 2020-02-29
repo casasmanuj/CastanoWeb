@@ -1,0 +1,22 @@
+﻿@model string
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('@Model').DataTable({
+            responsive: {
+                details: {
+                    type: 'column'
+                }
+            },
+            columnDefs: [{
+                className: 'control',
+                orderable: false,
+                targets: 0
+            }],
+            bAutoWidth: false,
+            buttons: ['copyHtml5', 'excelHtml5', 'csvHtml5'],
+            select: true,
+            ajax: './Scripts/FileEventos/eventos.txt'
+        });
+    });
+</script>

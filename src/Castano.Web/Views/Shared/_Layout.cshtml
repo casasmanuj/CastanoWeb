@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASTANO &amp; asociados</title>
+
+    <!-- Bootstrap core CSS -->
+    @Styles.Render("~/Content/bootstrap")
+    <!-- Bootstrap core JavaScript -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <!-- Custom fonts for this template -->
+    @Styles.Render("~/Content/fontawesome")
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- Plugin CSS -->
+    @Styles.Render("~/Content/magnific")
+    <!-- Custom styles for this template -->
+    @Styles.Render("~/Content/creative")
+
+    @RenderSection("content", required: false)
+</head>
+
+<body id="page-top">
+
+    @Scripts.Render("~/bundles/moment")
+    <!-- Plugin JavaScript -->
+    @Scripts.Render("~/bundles/jquery.easing")
+    @Scripts.Render("~/bundles/scrollreveal")
+    @Scripts.Render("~/bundles/magnific.popup")
+    <!-- Custom scripts for this template -->
+    @Scripts.Render("~/bundles/creative")
+    <!--Facebook plugin-->
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.2';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    @RenderSection("scripts", required: false)
+
+    @RenderBody()
+    <hr />
+    <footer>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-6">
+                    <div id="fb-root"></div>
+                    <div class="fb-page" data-href="https://www.facebook.com/CASTANO-asociados-154095021324925/" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+                        <blockquote cite="https://www.facebook.com/CASTANO-asociados-154095021324925/" class="fb-xfbml-parse-ignore">
+                            <a href="https://www.facebook.com/CASTANO-asociados-154095021324925/">CASTANO &amp; asociados</a>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="col-lg-2 text-primary">
+                    <i class="fas fa-map-marker-alt fa-3x mb-3 sr-icon-1"></i>
+                    <p>Rosario, Santa Fe</p>
+                    <p>2000</p>
+                </div>
+                <div class="col-lg-2 text-primary">
+                    <i class="fas fa-phone fa-3x mb-3 sr-icon-2"></i>
+                    <p>&nbsp;(0341)485-4531</p>
+                </div>
+                <div class="col-lg-2 text-primary">
+                    <i class="fas fa-envelope fa-3x mb-3 sr-icon-3"></i>
+                    <p>
+                        &nbsp;<a href="mailto:info@castanoyasociados.com.ar">info@castanoyasociados</a>
+                    </p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-lg-6 mr-auto text-center">
+                    <h5>
+                        CASTANO &amp; asociados &copy; @DateTime.Now.Year
+                    </h5>
+                </div>
+                <div class="col-lg-6 mr-auto text-right">
+                    <small>
+                        Diseño y desarrollo:
+                        <a href="mailto:casasmanuj@gmail.com.ar">
+                            Manuel J. Casas
+                        </a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

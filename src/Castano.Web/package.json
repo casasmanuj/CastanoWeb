@@ -1,0 +1,16 @@
+{
+  "name": "Castano.Web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "datatables.net-bs4": "^1.10.19",
+    "datatables.net-buttons-bs4": "^1.5.4",
+    "datatables.net-responsive-bs4": "^2.2.3",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "jszip": "^3.1.5",
+    "moment": "^2.24.0",
+    "pdfmake": "^0.1.40"
+  }
+}
