@@ -45,6 +45,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -97,9 +101,6 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -159,10 +160,10 @@
     <Content Include="js\datatables\datatablesResponsive.js" />
     <Content Include="js\datatables\datatablesResponsiveBs4.js" />
     <Content Include="js\datatables\jszip.js" />
-    <Content Include="js\jquery.easing\jquery.easing.js" />
+    <Content Include="js\jquery.easing\jquery-easing.min.js" />
     <Content Include="js\jquery\jquery.js" />
     <Content Include="js\knockout\knockoutjs.js" />
-    <Content Include="js\magnific-popup\magnific.popup.js" />
+    <Content Include="js\magnific-popup\magnific-popup.min.js" />
     <Content Include="js\moment\es.js" />
     <Content Include="js\moment\moment.min.js" />
     <Content Include="js\scrollreveal\scrollreveal.js" />
@@ -213,7 +214,7 @@
     <Content Include="Views\Shared\_DatatablesContent.cshtml" />
     <Content Include="Views\Shared\_DatatablesStartup.cshtml" />
     <Content Include="Views\Pedido\Create.cshtml" />
-    <None Include="Properties\PublishProfiles\CastanoProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\CastanoWeb - Web Deploy.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

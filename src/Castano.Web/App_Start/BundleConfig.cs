@@ -44,13 +44,13 @@ namespace Castano.Web
                         "~/js/bootstrap.datetime/bootstrap-datetime.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery.easing").Include(
-                        "~/js/jquery.easing/jquery.easing.js"));
+                        "~/js/jquery.easing/jquery-easing.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/scrollreveal").Include(
                         "~/js/scrollreveal/scrollreveal.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/magnific.popup").Include(
-                        "~/js/magnific-popup/magnific.popup.js"));
+                        "~/js/magnific-popup/magnific-popup.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
                         "~/js/knockout/knockoutjs.js",
