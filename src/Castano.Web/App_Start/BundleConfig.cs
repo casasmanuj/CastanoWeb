@@ -8,8 +8,6 @@ namespace Castano.Web
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.UseCdn = true;
-
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
                 "~/css/bootstrap/bootstrap.css"));
 
