@@ -1,6 +1,6 @@
 ﻿/*@preserve
- * Tempus Dominus Bootstrap4 v5.0.0-alpha14 (https://tempusdominus.github.io/bootstrap-4/)
- * Copyright 2016-2017 Jonathan Peterson
+ * Tempus Dominus Bootstrap4 v5.0.1 (https://tempusdominus.github.io/bootstrap-4/)
+ * Copyright 2016-2018 Jonathan Peterson
  * Licensed under MIT (https://github.com/tempusdominus/bootstrap-3/blob/master/LICENSE)
  */
 
@@ -92,6 +92,10 @@
 .bootstrap-datetimepicker-widget.dropdown-menu.float-right:after {
     left: auto;
     right: 7px;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu.wider {
+    width: 16rem;
 }
 
 .bootstrap-datetimepicker-widget .list-unstyled {
@@ -198,7 +202,7 @@
 
         .bootstrap-datetimepicker-widget table th.disabled, .bootstrap-datetimepicker-widget table th.disabled:hover {
             background: none;
-            color: #868e96;
+            color: #6c757d;
             cursor: not-allowed;
         }
 
@@ -228,7 +232,7 @@
             font-size: .8em;
             height: 20px;
             line-height: 20px;
-            color: #868e96;
+            color: #6c757d;
         }
 
         .bootstrap-datetimepicker-widget table td.day {
@@ -243,7 +247,7 @@
             }
 
         .bootstrap-datetimepicker-widget table td.old, .bootstrap-datetimepicker-widget table td.new {
-            color: #868e96;
+            color: #6c757d;
         }
 
         .bootstrap-datetimepicker-widget table td.today {
@@ -274,7 +278,7 @@
 
         .bootstrap-datetimepicker-widget table td.disabled, .bootstrap-datetimepicker-widget table td.disabled:hover {
             background: none;
-            color: #868e96;
+            color: #6c757d;
             cursor: not-allowed;
         }
 
@@ -299,12 +303,12 @@
             }
 
             .bootstrap-datetimepicker-widget table td span.old {
-                color: #868e96;
+                color: #6c757d;
             }
 
             .bootstrap-datetimepicker-widget table td span.disabled, .bootstrap-datetimepicker-widget table td span.disabled:hover {
                 background: none;
-                color: #868e96;
+                color: #6c757d;
                 cursor: not-allowed;
             }
 
@@ -313,6 +317,6 @@
     line-height: 27px;
 }
 
-.input-group.date .input-group-append {
+.input-group [data-toggle="datetimepicker"] {
     cursor: pointer;
 }

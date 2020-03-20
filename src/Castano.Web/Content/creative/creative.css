@@ -4,10 +4,6 @@ html {
   height: 100%;
 }
 
-body {
-  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
-}
-
 hr {
   max-width: 50px;
   border-width: 3px;
@@ -26,15 +22,6 @@ a {
 
 a:hover {
   color: #004085;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .bg-primary {
@@ -172,9 +159,10 @@ img::-moz-selection {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url("../img/header.jpg");
+  background-image: url('../../img/header.jpg');
   background-position: center center;
   background-size: cover;
+  opacity: 0.9;
 }
 
 header.masthead hr {

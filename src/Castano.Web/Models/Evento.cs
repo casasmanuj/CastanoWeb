@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Castano.Web.Models
+﻿namespace Castano.Web.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class Evento
     {
-        DateTime Dia { get; set; }
+        public DateTime Dia { get; set; }
         public string Cliente { get; set; }
         public string Salon { get; set; }
         public string Nombre { get; set; }

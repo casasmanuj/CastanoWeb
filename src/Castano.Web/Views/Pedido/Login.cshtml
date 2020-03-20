@@ -1,0 +1,80 @@
+﻿@model Castano.Web.Models.Login
+@{
+    Layout = null;
+}
+<div class="body">
+    <!-- Navigation -->
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="@Url.Action("Index", "Home")">
+                    <img alt="castano&asociados" src="~/img/logo.jpg" style="max-width: 250px" />
+                </a>
+            </div>
+        </nav>
+    </div>
+    <section>
+        <div class="container mt-5 mb-5">
+            <div class="well no-padding">
+                @using (Html.BeginForm("Login", "Pedido", null, FormMethod.Post, new { id = "LoginForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <header>Ingreso</header>
+                        <section>
+                            @Html.LabelFor(m => m.UserName, new { @class = "label" })
+                            <label class="input form-group">
+                                <i class="icon-append fa fa-user"></i>
+                                @Html.TextBoxFor(m => m.UserName, new { placeholder = "Usuario" })
+                            </label>
+                            @Html.ValidationMessageFor(m => m.UserName)
+                        </section>
+                        <section>
+                            @Html.LabelFor(m => m.Password, new { @class = "label" })
+                            <label class="input form-group">
+                                <i class="icon-append fa fa-lock"></i>
+                                @Html.PasswordFor(m => m.Password, new { placeholder = "Password" })
+                            </label>
+                            @Html.ValidationMessageFor(m => m.Password)
+                            <div class="note">
+                                @Html.ActionLink("¿Olvidó su contraseña?", "SendPass", "Account")
+                            </div>
+                        </section>
+                        <section>
+                            <label class="checkbox">
+                                <input type="checkbox" name="rememberMe" value="true" checked="checked">
+                                <input type="hidden" name="rememberMe" value="false" />
+                                <i></i>Recordarme
+                            </label>
+                        </section>
+                    <footer>
+                        <div hidden="hidden" id="progressBar">
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                    <span class="sr-only">100% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="btnSubmit">Ingresar</button>
+                    </footer>
+
+                }
+            </div>
+        </div>
+    </section>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryval-es")
+    @Scripts.Render("~/bundles/jqueryval.bootstrap")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#LoginForm").submit(function () {
+                if ($("#LoginForm").valid()) {
+                    $("#btnSubmit").hide();
+                    $("#progressBar").removeAttr("hidden");
+                }
+            });
+        });
+    </script>
+}

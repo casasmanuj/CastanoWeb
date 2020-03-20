@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h2 style="color: #2e6c80;"><span style="color: #000080;">Pedido realizado a las {FechaHora}:</span></h2>
+    <p><span style="color: #000000;"><strong><span style="color: #000080;">{Cliente}</span></strong> para el salon <strong><span style="color: #000080;">{Salon}</span></strong></span></p>
+    <ul>
+        <li><span style="color: #000000;">Prueba: <strong><span style="color: #000080;">{Prueba}</span></strong></span></li>
+        <li><span style="color: #000000;">Inicio: <strong><span style="color: #000080;">{Inicio}</span></strong></span></li>
+        <li><span style="color: #000000;">Finalizacion: <span style="color: #000080;"><strong>{Finalizacion}</strong></span></span></li>
+        <li><span style="color: #000000;">Cantidad de dias: <span style="color: #000080;"><strong>{CantidadDias}</strong></span></span></li>
+    </ul>
+    <p><span style="color: #000000;">Equipos pedidos:</span></p>
+    <table>
+        <thead>
+            <tr>
+                <th style="text-align: center;">Operador</th>
+                <th style="text-align: center;">Descripcion Equipo</th>
+                <th style="text-align: center;">Precio (ARS)</th>
+                <th style="text-align: center;">Total Equipo (ARS)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {Equipos}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td style="text-align: right;" colspan="3">{TotalEquipos}</td>
+            </tr>
+            <tr>
+                <td><span style="background-color: #ffff00;">I.V.A.</span></td>
+                <td style="text-align: right;" colspan="3"><span style="background-color: #ffff00;">{IVA}</span></td>
+            </tr>
+            <tr>
+                <td>Final</td>
+                <td style="text-align: right;" colspan="3">{Total}</td>
+            </tr>
+        </tfoot>
+    </table>
+    <p>Observaciones:</p>
+    <p><span style="color: #000080;"><strong>{Observaciones}</strong></span></p>
+</body>
+</html>

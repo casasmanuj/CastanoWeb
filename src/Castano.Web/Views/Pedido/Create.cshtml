@@ -1,171 +1,337 @@
-﻿@model Castano.Web.Models.Pedido
+﻿@model Castano.Data.Pedido
 
 @{
     ViewBag.Title = "Pedido Cástano y Asociados";
-
-    @Styles.Render("~/Content/bootstrap.datetime")
 }
-<!-- Navigation -->
-<div class="row">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="@Url.Action("Index", "Home")">
-                <img alt="castano&asociados" src="~/img/logo.jpg" style="max-width: 250px" />
-            </a>
+
+<div class="body">
+    <!-- Navigation -->
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="@Url.Action("Index", "Home")">
+                    <img alt="castano&asociados" src="~/img/logo.jpg" style="max-width: 250px" />
+                </a>
+            </div>
+        </nav>
+    </div>
+    <section>
+        <div class="jumbotron">
+            <h3 data-bind="text: Cliente" class="section-heading text-primary"></h3>
+            <h3 data-bind="text: FechaHora" class="section-heading text-primary"></h3>
+
+            <div class="col-lg-10 mx-auto text-center">
+                <hr class="my-4">
+                <div id="smartwizard">
+                    <ul>
+                        <li>
+                            <a class="nav-link js-scroll-trigger" href="#step-1">
+                                Evento<br />
+                                <small>Informacion del Evento.</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link js-scroll-trigger" href="#step-2">
+                                Equipos<br />
+                                <small class="text-muted">Equipamiento requeridos.</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link js-scroll-trigger" href="#step-3">
+                                Observaciones<br />
+                                <small class="text-muted">Informacion adicional.</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link js-scroll-trigger" href="#step-4">
+                                Vista Previa<br />
+                                <small class="text-muted">Vista a los datos del evento</small>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div>
+                        <!-- EVENTO -->
+                        <div id="step-1">
+                            <h3 class="section-heading text-primary">EVENTO</h3>
+                            <div class="col-lg-12">
+                                <div class="col-xs-12 col-sm-4 col-lg-2">
+                                    <label class="section-heading text-primary">Salon</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-8 col-lg-10">
+                                    <div class="form-group">
+                                        <input type="text" id="Salon" name="Salon" class="form-control" data-bind="value: Salon" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-xs-12 col-sm-4 col-lg-2">
+                                    <label class="section-heading text-primary">Prueba</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-8 col-lg-10">
+                                    <div class="form-group">
+                                        <div class="input-group date" id="Prueba" data-target-input="nearest">
+                                            <input class="form-control datetimepicker-input" name="Prueba" data-target="#Prueba" data-bind="value: Prueba" data-rule-required="true" data-rule-date="true" />
+                                            <div class="input-group-append" data-target="#Prueba" data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-xs-12 col-sm-4 col-lg-2">
+                                    <label class="section-heading text-primary">Inicio</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-8 col-lg-10">
+                                    <div class="form-group">
+                                        <div class="input-group date" id="Inicio" data-target-input="nearest">
+                                            <input class="form-control datetimepicker-input" name="Inicio" data-target="#Inicio" data-bind="value: Inicio" data-rule-required="true" data-rule-date="true" />
+                                            <div class="input-group-append" data-target="#Inicio" data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-xs-12 col-sm-4 col-lg-2">
+                                    <label class="section-heading text-primary">Finalización</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-8 col-lg-10">
+                                    <div class="form-group">
+                                        <div class="input-group date" id="Finalizacion" data-target-input="nearest">
+                                            <input class="form-control datetimepicker-input" name="Finalizacion" data-target="#Finalizacion" data-bind="value: Finalizacion" data-rule-required="true" data-rule-date="true" />
+                                            <div class="input-group-append" data-target="#Finalizacion" data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-xs-12 col-sm-4 col-lg-2">
+                                    <label class="section-heading text-primary">Cantidad Días</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-8 col-lg-10">
+                                    <div class="form-group">
+                                        <div class="col-xs-10 col-lg-5">
+                                            <div class="form-group">
+                                                <span data-bind="text: CantidadDias"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- EQUIPAMIENTO -->
+                        <div id="step-2">
+                            <div class="row">
+                                <label>EQUIPAMIENTO</label>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Con Operador</th>
+                                            <th class="text-center">Cantidad</th>
+                                            <th class="text-center">Equipo</th>
+                                            <th class="text-center">Precio</th>
+                                            <th class="text-center">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody data-bind="foreach: Equipos">
+                                        <tr>
+                                            <td>
+                                                <input data-bind="value: ConOperador, visible: Nombre == 'Sonido Base'" type="checkbox" />
+                                            </td>
+                                            <td>
+                                                <input data-bind="value: Cantidad" type="number" min="0" />
+                                            </td>
+                                            <td data-bind="text: Nombre"></td>
+                                            <td class="text-right" data-bind="text: numeral(Precio()).format('0,0.00')"></td>
+                                            <td class="text-right" data-bind="text: numeral(TotalEquipo()).format('0,0.00')">
+                                                <i data-bind="text: Descripcion, visible: Descripcion != ''" class="fa fa-info-circle"></i>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td>Total</td>
+                                            <th colspan="3" class="text-right" data-bind="text: numeral(TotalPedido()).format('0,0.00')"></th>
+                                        </tr>
+                                        <tr>
+                                            <td>I.V.A.</td>
+                                            <th colspan="3" class="text-right" data-bind="text: numeral(IVA()).format('0,0.00')"></th>
+                                        </tr>
+                                        <tr>
+                                            <td>Final</td>
+                                            <th colspan="3" class="text-right" data-bind="text: numeral(TotalFinal()).format('0,0.00')"></th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                        <!--OBSERVACIONES-->
+                        <div id="step-3">
+                            <div class="row">
+                                <span>OBSERVACIONES</span>
+                                <div class="form-group">
+                                    <div class="col-xs-10 col-lg-5">
+                                        <textarea class="form-control" id="Observaciones" name="Observaciones" data-bind="value: Observaciones" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--SUBMIT-->
+                        <div id="step-4">
+                            <div class="row">
+                                <div class="g-recaptcha" data-sitekey="6LfBQOIUAAAAAKvtRuZM54-NOigyvZWyd2YGGY2g"></div>
+                                <div class="form-group">
+                                    <div class="col-xs-offset-2 col-xs-10">
+                                        <button data-bind="click: EnviarPedido" class="btn btn-primary">Enviar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
+
+
+
+    </section>
+
 </div>
 
-<div class="container">
-    @using (Html.BeginForm("Create", "Pedido", FormMethod.Post))
-    {
-        <section>
-            @if (!string.IsNullOrWhiteSpace(ViewBag.Success))
-            {
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>Éxito!</strong> @ViewBag.Success.
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+@section scripts{
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/jquery-smartwizard")
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#smartwizard').smartWizard({
+                selected: 0,
+                lang: {  // Language variables
+                    next: 'Siguiente',
+                    previous: 'Anterior'
+                },
+                theme: 'arrows',
+                transitionEffect: 'slide',
+                transitionTime: '400'
+            });
+
+            $('#Prueba').datetimepicker({
+                stepping: 15,
+                minDate: moment(new Date()).add(1, 'days').subtract(1, 'hour'),
+                sideBySide: true
+            });
+            $('#Inicio').datetimepicker({
+                stepping: 15,
+                sideBySide: true
+            });
+            $('#Finalizacion').datetimepicker({
+                stepping: 15,
+                sideBySide: true
+            });
+
+            // Eventos onChange de los datetime
+            $("#Prueba").on("change.datetimepicker", function (e) {
+                $('#Inicio').datetimepicker('minDate', moment(e.date, "DD/MM/YYYY HH:mm").add(1, 'hour'));
+            });
+            $("#Inicio").on("change.datetimepicker", function (e) {
+                $('#Finalizacion').datetimepicker('minDate', moment(e.date, "DD/MM/YYYY HH:mm").add(1, 'hour'));
+                //para forzar el set de los valores en model
+                viewModel.Inicio(moment(e.date).format('DD/MM/YYYY HH:mm'));
+            });
+            $("#Finalizacion").on("change.datetimepicker", function (e) {
+                //para forzar el set de los valores en model
+                viewModel.Finalizacion(moment(e.date).format('DD/MM/YYYY HH:mm'));
+            });
+            //
+
+            var Equipo = function(data) {
+                var self = this;
+                self.ConOperador = ko.observable();
+                self.Cantidad = ko.observable(data.Cantidad);
+                self.Nombre = data.Nombre;
+                self.Precio = ko.observable(data.Precio);
+
+                self.TotalEquipo = ko.computed(function() {
+                    return self.Cantidad() * self.Precio();
+                }, self);
             }
-            @if (!string.IsNullOrWhiteSpace(ViewBag.Error))
-            {
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <strong>Error!</strong> @ViewBag.Error.
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            }
 
-            <!-- EVENTO -->
-            <div class="container">
-                <label>EVENTO</label>
-                <div class="form-group">
-                    @Html.LabelFor(m => Model.Salon)
-                    <div class="col-xs-10 col-lg-5">
-                        <input type="text" id="Salon" name="Salon" class="form-control" data-bind="value: Salon" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => Model.Prueba)
-                    <div class="col-xs-10 col-lg-5">
-                        <div class="form-group">
-                            <div class="input-group date" id="Prueba" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" name="Prueba" data-target="#Prueba" data-bind="dateString: Prueba, datePattern: 'DD/MM/YYYY HH:mm'" />
-                                <div class="input-group-append" data-target="#Prueba" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => Model.Inicio)
-                    <div class="col-xs-10 col-lg-5">
-                        <div class="form-group">
-                            <div class="input-group date" id="Inicio" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" name="Inicio" data-target="#Inicio" data-bind="dateString: Inicio" />
-                                <div class="input-group-append" data-target="#Inicio" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => Model.Finalizacion)
-                    <div class="col-xs-10 col-lg-5">
-                        <div class="form-group">
-                            <div class="input-group date" id="Finalizacion" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" name="Finalizacion" data-target="#Finalizacion" data-bind="dateString: Finalizacion" />
-                                <div class="input-group-append" data-target="#Finalizacion" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => Model.CantidadDias)
-                    <div class="col-xs-10">
-                        <label data-bind="text: CantidadDias"></label>
-                    </div>
-                </div>
-            </div>
+            var Pedido = function (data) {
+                var self = this;
+                self.Cliente = ko.observable('Hola, ' + data.Cliente + '!');
+                self.FechaHora = ko.observable(moment(data.FechaHora, 'dd/MM/yyyy HH:mm').format('dddd, MMMM DD YYYY hh:mm'));
+                self.Salon = ko.observable('');
+                self.Prueba = ko.observable();
+                self.Inicio = ko.observable();
+                self.Finalizacion = ko.observable();
+                self.Observaciones = ko.observable();
 
-            <!-- EQUIPAMIENTO -->
-            <div class="container">
-                <label>EQUIPAMIENTO</label>
+                self.Equipos = ko.observableArray();
 
-                <div class="form-group">
+                self.CantidadDias = ko.computed(function () {
+                    var diferencia = 0;
+                    var finalizacion = self.Finalizacion();
+                    var inicio = self.Inicio();
 
-                </div>
-            </div>
+                    if (finalizacion != undefined && inicio != undefined) {
+                        diferencia = moment(finalizacion, 'DD/MM/YYYY HH:mm').diff(moment(inicio, 'DD/MM/YYYY HH:mm'),'days') + 1;
+                    }
+                    return diferencia;
+                }, self);
 
-            <hr />
+                self.TotalPedido = ko.computed(function () {
+                    var total = 0;
+                    for (var i = 0; i < self.Equipos().length; i++) {
+                        total = total + self.Equipos()[i].TotalEquipo();
+                    }
+                    return total;
+                }, self);
+                self.IVA = ko.computed(function () {
+                    return self.TotalPedido() * 0.21;
+                }, self);
+                self.TotalFinal = ko.computed(function () {
+                    return self.TotalPedido() + self.IVA();
+                }, self);
 
-            <!--SUBMIT-->
-            <div class="container">
-                <div class="form-group">
-                    <div class="col-xs-offset-2 col-xs-10">
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                    </div>
-                </div>
-            </div>
+                self.EnviarPedido = function () {
+                    $.ajax({
+                        url: '@Url.Action("Create", "Pedido")',
+                        data: ko.toJSON(viewModel),
+                        type: 'POST',
+                        contentType: 'application/json; charset=utf-8'
+                    }).done(function (data) {
+                        if (data.envioCorrecto) {
+                            alert(data.msg);
+                        }
 
-        </section>
-    }
-</div>
+                    });
+                }
 
-@Scripts.Render("~/bundles/bootstrap.datetime")
-@Scripts.Render("~/bundles/knockout")
+                //Carga si vienen datos
+                var mapping = {
+                    Equipos: {
+                        create: function (options) {
+                            return new Equipo(options.data);
+                        },
+                        key: function (data) {
+                            return ko.utils.unwrapObservable(data.Nombre);
+                        }
+                    }
+                };
+                ko.mapping.fromJS(data, mapping, this);
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#Prueba').datetimepicker({
-            stepping: 15,
-            minDate: moment(new Date()).add(1, 'days'),
-            sideBySide: true
+            };
+
+            var pedido =  @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+            var viewModel = new Pedido(pedido);
+
+            ko.applyBindings(viewModel);
         });
-        $('#Inicio').datetimepicker({
-            stepping: 15,
-            sideBySide: true
-        });
-        $('#Finalizacion').datetimepicker({
-            stepping: 15,
-            sideBySide: true
-        });
-
-        $("#Prueba").on("change.datetimepicker", function (e) {
-            $('#Inicio').datetimepicker('minDate', moment(e.date).add(1, 'hour'));
-        });
-        $("#Inicio").on("change.datetimepicker", function (e) {
-            $('#Finalizacion').datetimepicker('minDate', moment(e.date).add(1, 'hour'));
-        });
-
-        //
-        ko.validation.init({
-            errorElementClass: 'has-error',
-            errorMessageClass: 'help-block',
-            decorateInputElement: true
-        });
-
-        function modelPedido() {
-            this.Salon = ko.observable('');
-            this.Prueba = ko.observable();
-            this.Inicio = ko.observable();
-            this.Finalizacion = ko.observable();
-
-            this.CantidadDias = ko.pureComputed(function () {
-                var momentFinalizacion = moment(this.Finalizacion());
-                var momentInicio = moment(this.Inicio());
-                var diferencia = momentFinalizacion.diff(momentInicio, 'days');
-                return this.Salon() + " " + this.Finalizacion() + " " + this.Inicio();
-            }, this);
-        };
-
-        ko.applyBindings(modelPedido);
-    });
-</script>
+    </script>
+}

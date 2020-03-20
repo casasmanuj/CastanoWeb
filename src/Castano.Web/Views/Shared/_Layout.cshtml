@@ -3,50 +3,23 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASTANO &amp; asociados</title>
-
-    <!-- Bootstrap core CSS -->
-    @Styles.Render("~/Content/bootstrap")
-    <!-- Bootstrap core JavaScript -->
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    <!-- Custom fonts for this template -->
-    @Styles.Render("~/Content/fontawesome")
+    @Scripts.Render("~/bundles/moment")
+
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <!-- Plugin CSS -->
-    @Styles.Render("~/Content/magnific")
-    <!-- Custom styles for this template -->
-    @Styles.Render("~/Content/creative")
-
+    
     @RenderSection("content", required: false)
 </head>
 
 <body id="page-top">
 
-    @Scripts.Render("~/bundles/moment")
-    <!-- Plugin JavaScript -->
-    @Scripts.Render("~/bundles/jquery-easing")
-    @Scripts.Render("~/bundles/scrollreveal")
-    @Scripts.Render("~/bundles/magnific-popup")
-    <!-- Custom scripts for this template -->
-    @Scripts.Render("~/bundles/creative")
-    <!--Facebook plugin-->
-    <script>
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.2';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-
-    @RenderSection("scripts", required: false)
-
     @RenderBody()
     <hr />
-    <footer>
+    <footer id="contacto">
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-6">
@@ -92,5 +65,26 @@
         </div>
     </footer>
 
+    <!--Facebook plugin-->
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.2';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    @Scripts.Render("~/bundles/numeral")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/bootstrap-datetime")
+    <!-- Plugin JavaScript -->
+    @Scripts.Render("~/bundles/jquery-easing")
+    @Scripts.Render("~/bundles/scrollreveal")
+    @Scripts.Render("~/bundles/magnific-popup")
+    <!-- Custom scripts for this template -->
+    @Scripts.Render("~/bundles/creative")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

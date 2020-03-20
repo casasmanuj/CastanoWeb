@@ -1,21 +1,7 @@
-﻿body {
-  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-}
-
-header.masthead {
+﻿header.masthead {
   position: relative;
   background-color: #343a40;
-  background: url("../img/bg-masthead.jpg") no-repeat center center;
+  background-image: url('../../img/header.jpg');
   background-size: cover;
   padding-top: 8rem;
   padding-bottom: 8rem;
@@ -29,20 +15,6 @@ header.masthead .overlay {
   top: 0;
   left: 0;
   opacity: 0.3;
-}
-
-header.masthead h1 {
-  font-size: 2rem;
-}
-
-@media (min-width: 768px) {
-  header.masthead {
-    padding-top: 12rem;
-    padding-bottom: 12rem;
-  }
-  header.masthead h1 {
-    font-size: 3rem;
-  }
 }
 
 .showcase .showcase-text {
@@ -121,3 +93,26 @@ footer.footer {
     background: #3B5998;
     color: white;
 }
+
+.sw-theme-arrows .step-content {
+    background-color: transparent;
+}
+
+.sw-theme-arrows > ul.step-anchor > li.active > a {
+    border-color: #004085 !important;
+    color: #fff !important;
+    background: #004085 !important;
+}
+    .sw-theme-arrows > ul.step-anchor > li.active > a:after {
+        border-left: 30px solid #004085 !important;
+    }
+
+.sw-theme-arrows > ul.step-anchor > li.done > a {
+    border-color: #7894b3 !important;
+    color: #fff !important;
+    background: #7894b3 !important;
+}
+
+    .sw-theme-arrows > ul.step-anchor > li.done > a:after {
+        border-left: 30px solid #7894b3;
+    }
