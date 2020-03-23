@@ -116,3 +116,11 @@ footer.footer {
     .sw-theme-arrows > ul.step-anchor > li.done > a:after {
         border-left: 30px solid #7894b3;
     }
+
+.card-header .fa {
+    transition: .3s transform ease-in-out;
+}
+
+.card-header .collapsed .fa {
+    transform: rotate(-90deg);
+}

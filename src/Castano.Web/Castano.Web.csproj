@@ -183,6 +183,7 @@
     <Content Include="Scripts\jquery\jquery.js" />
     <Content Include="Scripts\knockout\knockoutjs.js" />
     <Content Include="Scripts\magnific.popup\magnific.popup.min.js" />
+    <Content Include="Scripts\moment-holiday\moment-holiday.min.js" />
     <Content Include="Scripts\moment\es.js" />
     <Content Include="Scripts\moment\moment.min.js" />
     <Content Include="Scripts\numeral\numeral.es.js" />
@@ -237,6 +238,7 @@
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Scripts\knockout\knockoutjs.mapping.js" />
     <Content Include="Views\Pedido\Login.cshtml" />
+    <Content Include="Scripts\moment-holiday\moment-holiday.ar.js" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Castano.Data\Castano.Data.csproj">

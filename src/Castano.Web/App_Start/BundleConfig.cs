@@ -30,6 +30,10 @@ namespace Castano.Web
                 "~/Scripts/moment/moment.min.js",
                 "~/Scripts/moment/es.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/moment-holiday").Include(
+                "~/Scripts/moment-holiday/moment-holiday.min.js",
+                "~/Scripts/moment-holiday/moment-holiday.ar.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/numeral").Include(
                 "~/Scripts/numeral/numeral.min.js",
                 "~/Scripts/numeral/numeral.es.js"));
