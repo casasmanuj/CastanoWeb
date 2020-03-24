@@ -137,6 +137,7 @@
     </Compile>
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Pedido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -178,8 +179,10 @@
     <Content Include="Scripts\datatables\datatablesResponsive.js" />
     <Content Include="Scripts\datatables\datatablesResponsiveBs4.js" />
     <Content Include="Scripts\datatables\jszip.js" />
+    <Content Include="Scripts\jquery.blockUI\jquery.blockUI.js" />
     <Content Include="Scripts\jquery.easing\jquery.easing.min.js" />
     <Content Include="Scripts\jquery.smartwizard\jquery.smartWizard.js" />
+    <Content Include="Scripts\bootstrap.validator\bootstrap.validator.js" />
     <Content Include="Scripts\jquery\jquery.js" />
     <Content Include="Scripts\knockout\knockoutjs.js" />
     <Content Include="Scripts\magnific.popup\magnific.popup.min.js" />
@@ -191,6 +194,7 @@
     <Content Include="Scripts\scrollreveal\scrollreveal.js" />
     <Content Include="Scripts\FileEventos\eventos.txt" />
     <Content Include="Scripts\modernizr\modernizr-2.8.3.js" />
+    <Content Include="Views\EmailTemplate\MailPedido.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

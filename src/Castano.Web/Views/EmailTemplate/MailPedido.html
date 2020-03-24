@@ -7,14 +7,23 @@
 </head>
 <body>
     <h2 style="color: #2e6c80;"><span style="color: #000080;">Pedido realizado a las {FechaHora}:</span></h2>
-    <p><span style="color: #000000;"><strong><span style="color: #000080;">{Cliente}</span></strong> para el salon <strong><span style="color: #000080;">{Salon}</span></strong></span></p>
+    <p>
+        <span style="color: #000000;">
+            <strong><span style="color: #000080;">{Cliente}</span></strong>
+        </span>
+    </p>
+    <p>
+        <span style="color: #000000;">
+            Salon: <strong><span style="color: #000080;">{Salon}</span></strong>
+        </span>
+    </p>
     <ul>
         <li><span style="color: #000000;">Prueba: <strong><span style="color: #000080;">{Prueba}</span></strong></span></li>
         <li><span style="color: #000000;">Inicio: <strong><span style="color: #000080;">{Inicio}</span></strong></span></li>
         <li><span style="color: #000000;">Finalizacion: <span style="color: #000080;"><strong>{Finalizacion}</strong></span></span></li>
         <li><span style="color: #000000;">Cantidad de dias: <span style="color: #000080;"><strong>{CantidadDias}</strong></span></span></li>
     </ul>
-    <p><span style="color: #000000;">Equipos pedidos:</span></p>
+    <p><span style="color: #000000;">Equipos requeridos:</span></p>
     <table>
         <thead>
             <tr>
@@ -35,6 +44,14 @@
             <tr>
                 <td><span style="background-color: #ffff00;">I.V.A.</span></td>
                 <td style="text-align: right;" colspan="3"><span style="background-color: #ffff00;">{IVA}</span></td>
+            </tr>
+            <tr>
+                <td><span>Descuento</span></td>
+                <td style="text-align: right;" colspan="3"><span>{Descuento}</span></td>
+            </tr>
+            <tr>
+                <td><span>Recargo</span></td>
+                <td style="text-align: right;" colspan="3"><span>{Recargo}</span></td>
             </tr>
             <tr>
                 <td>Final</td>

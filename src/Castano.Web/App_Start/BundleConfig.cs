@@ -44,11 +44,20 @@ namespace Castano.Web
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                         "~/Scripts/bootstrap/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap-validator").Include(
+                        "~/Scripts/bootstrap.validator/bootstrap.validator.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/bootstrap-datetime").Include(
                         "~/Scripts/bootstrap.datetime/bootstrap.datetime.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery-easing").Include(
                         "~/Scripts/jquery.easing/jquery.easing.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jquery-blockUI").Include(
+                        "~/Scripts/jquery.blockUI/jquery.blockUI.js"));
+            
+            bundles.Add(new ScriptBundle("~/bundles/jquery-smartwizard").Include(
+                        "~/Scripts/jquery.smartwizard/jquery.smartwizard.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/scrollreveal").Include(
                         "~/Scripts/scrollreveal/scrollreveal.js"));
@@ -59,9 +68,6 @@ namespace Castano.Web
             bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
                         "~/Scripts/knockout/knockoutjs.js",
                         "~/Scripts/knockout/knockoutjs.mapping.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/jquery-smartwizard").Include(
-                        "~/Scripts/jquery.smartwizard/jquery.smartwizard.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/creative").Include(
                         "~/Scripts/creative/creative.js"));

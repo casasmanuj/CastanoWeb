@@ -19,37 +19,36 @@
         <div class="jumbotron">
             <h3 data-bind="text: Cliente" class="section-heading text-primary"></h3>
             <h3 data-bind="text: FechaHora" class="section-heading text-primary"></h3>
-
-            <div class="col-lg-10 mx-auto text-center">
+            <div class="col-lg-11 mx-auto text-center" id="formPedido">
                 <hr class="my-4">
                 <div id="smartwizard">
                     <ul>
                         <li>
-                            <a class="nav-link js-scroll-trigger" href="#step-1">
+                            <a class="nav-link js-scroll-trigger" href="#step-0">
                                 Evento<br />
                                 <small>Informacion del Evento.</small>
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link js-scroll-trigger" href="#step-2">
+                            <a class="nav-link js-scroll-trigger" href="#step-1">
                                 Equipos<br />
                                 <small>Equipamiento requeridos.</small>
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link js-scroll-trigger" href="#step-3">
+                            <a class="nav-link js-scroll-trigger" href="#step-2">
                                 Descuentos y Recargos<br />
                                 <small>Aclaración sobre descuentos y recargos que se aplicarán.</small>
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link js-scroll-trigger" href="#step-4">
+                            <a class="nav-link js-scroll-trigger" href="#step-3">
                                 Observaciones<br />
                                 <small>Informacion adicional.</small>
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link js-scroll-trigger" href="#step-5">
+                            <a class="nav-link js-scroll-trigger" href="#step-4">
                                 Vista Previa Pedido<br />
                                 <small>Vista a los datos del evento</small>
                             </a>
@@ -58,559 +57,573 @@
 
                     <div>
                         <!-- EVENTO -->
-                        <div id="step-1">
+                        <div id="step-0">
                             <h3 class="section-heading text-primary">EVENTO</h3>
-                            <div class="col-lg-12">
-                                <div class="col-xs-12 col-sm-4 col-lg-2">
-                                    <label class="section-heading text-primary">Salon</label>
-                                </div>
-                                <div class="col-xs-12 col-sm-8 col-lg-10">
-                                    <div class="form-group">
-                                        <input type="text" id="Salon" name="Salon" class="form-control" data-bind="value: Salon" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="col-xs-12 col-sm-4 col-lg-2">
-                                    <label class="section-heading text-primary">Prueba</label>
-                                </div>
-                                <div class="col-xs-12 col-sm-8 col-lg-10">
-                                    <div class="form-group">
-                                        <div class="input-group date" id="Prueba" data-target-input="nearest">
-                                            <input class="form-control datetimepicker-input" name="Prueba" data-target="#Prueba" data-bind="value: Prueba" data-rule-required="true" data-rule-date="true" />
-                                            <div class="input-group-append" data-target="#Prueba" data-toggle="datetimepicker">
-                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                            </div>
+                            <form class="needs-validation" novalidate id="form-0">
+                                <div id="form-step-0" role="form" data-toggle="validator">
+                                    <div class="col-lg-12">
+                                        <div class="col-xs-12 col-sm-4 col-lg-2">
+                                            <label class="section-heading text-primary">Salon</label>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="col-xs-12 col-sm-4 col-lg-2">
-                                    <label class="section-heading text-primary">Inicio</label>
-                                </div>
-                                <div class="col-xs-12 col-sm-8 col-lg-10">
-                                    <div class="form-group">
-                                        <div class="input-group date" id="Inicio" data-target-input="nearest">
-                                            <input class="form-control datetimepicker-input" name="Inicio" data-target="#Inicio" data-bind="value: Inicio" data-rule-required="true" data-rule-date="true" />
-                                            <div class="input-group-append" data-target="#Inicio" data-toggle="datetimepicker">
-                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="col-xs-12 col-sm-4 col-lg-2">
-                                    <label class="section-heading text-primary">Finalización</label>
-                                </div>
-                                <div class="col-xs-12 col-sm-8 col-lg-10">
-                                    <div class="form-group">
-                                        <div class="input-group date" id="Finalizacion" data-target-input="nearest">
-                                            <input class="form-control datetimepicker-input" name="Finalizacion" data-target="#Finalizacion" data-bind="value: Finalizacion" data-rule-required="true" data-rule-date="true" />
-                                            <div class="input-group-append" data-target="#Finalizacion" data-toggle="datetimepicker">
-                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="col-xs-12 col-sm-4 col-lg-2">
-                                    <label class="section-heading text-primary">Cantidad Días</label>
-                                </div>
-                                <div class="col-xs-12 col-sm-8 col-lg-10">
-                                    <div class="form-group">
-                                        <div class="col-xs-10 col-lg-5">
+                                        <div class="col-xs-12 col-sm-8 col-lg-10">
                                             <div class="form-group">
-                                                <span data-bind="text: CantidadDias"></span>
+                                                <input type="text" id="Salon" name="Salon" class="form-control" data-bind="value: Salon" required />
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="col-xs-12 col-sm-4 col-lg-2">
+                                            <label class="section-heading text-primary">Prueba</label>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-8 col-lg-10">
+                                            <div class="form-group">
+                                                <div class="input-group date" id="Prueba" data-target-input="nearest">
+                                                    <input class="form-control datetimepicker-input" name="Prueba" data-target="#Prueba" data-bind="value: Prueba" data-rule-date="true" required />
+                                                    <div class="input-group-append" data-target="#Prueba" data-toggle="datetimepicker">
+                                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                    </div>
+                                                </div>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="col-xs-12 col-sm-4 col-lg-2">
+                                            <label class="section-heading text-primary">Inicio</label>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-8 col-lg-10">
+                                            <div class="form-group">
+                                                <div class="input-group date" id="Inicio" data-target-input="nearest">
+                                                    <input class="form-control datetimepicker-input" name="Inicio" data-target="#Inicio" data-bind="value: Inicio" data-rule-date="true" required />
+                                                    <div class="input-group-append" data-target="#Inicio" data-toggle="datetimepicker">
+                                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                    </div>
+                                                </div>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="col-xs-12 col-sm-4 col-lg-2">
+                                            <label class="section-heading text-primary">Finalización</label>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-8 col-lg-10">
+                                            <div class="form-group">
+                                                <div class="input-group date" id="Finalizacion" data-target-input="nearest">
+                                                    <input class="form-control datetimepicker-input" name="Finalizacion" data-target="#Finalizacion" data-bind="value: Finalizacion" data-rule-date="true" required />
+                                                    <div class="input-group-append" data-target="#Finalizacion" data-toggle="datetimepicker">
+                                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                    </div>
+                                                </div>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="col-xs-12 col-sm-4 col-lg-2">
+                                            <label class="section-heading text-primary">Cantidad Días</label>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-8 col-lg-10">
+                                            <div class="form-group">
+                                                <div class="col-xs-10 col-lg-5">
+                                                    <div class="form-group">
+                                                        <span data-bind="text: CantidadDias"></span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                         <!-- EQUIPAMIENTO -->
-                        <div id="step-2">
+                        <div id="step-1">
                             <h3 class="section-heading text-primary">EQUIPAMIENTO</h3>
-                            <div class="col-lg-12">
-                                <div id="accordion" role="tablist" aria-multiselectable="true">
-                                    <!--MULTIMEDIA-->
-                                    <div class="card">
-                                        <h5 class="card-header" role="tab" id="headingMultimedia">
-                                            <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseMultimedia" aria-expanded="true" aria-controls="collapseMultimedia">
-                                                <i class="fa fa-chevron-down pull-right"></i> Multimedia
-                                            </a>
-                                        </h5>
-                                        <h6 class="card-header" role="tab">
-                                            <span class="text-primary">Incluye</span>: instalación sobre mesa de proyección (no provista),
-                                            conexión y retiro / puntero láser.<br />
-                                            <span class="text-primary">NO Incluye</span>: adaptadores para dispositivos MAC–APPLE, los que en caso de ser necesarios
-                                            deberán ser provistos por el propietario del dispositivo o solicitados con anticipación especificando sus características.<br />
-                                            <span class="text-primary">NOTA</span>: Contempla la presencia de un técnico para la conexión y prueba del equipamiento hasta media hora pasado el
-                                            horario fijado para tal fin, transcurrido ese tiempo su permanencia tiene un costo de $230 por hora.
-                                        </h6>
-                                        <div id="collapseMultimedia" class="collapse" role="tabpanel" aria-labelledby="headingMultimedia">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered table-hover">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="text-center">Cantidad</th>
-                                                            <th class="text-center">Equipo</th>
-                                                            <th class="text-center">Precio</th>
-                                                            <th class="text-center">Total</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody data-bind="foreach: Equipos">
-                                                        <tr data-bind="if: Tipo == 'Multimedia'">
-                                                            <td>
-                                                                <input data-bind="value: Cantidad" type="number" min="0" />
-                                                            </td>
-                                                            <td>
-                                                                <h5>
-                                                                    <span data-bind="text: Nombre"></span>
-                                                                    <i class="fas fa-exclamation-triangle text-danger" data-bind="visible: SoloConAnticipacion, attr:{ 'data-toggle': 'tooltip', title: 'Sólo Pedido con Anticipación' }"></i>
-                                                                </h5>
-                                                                <p data-bind="text: Descripcion"></p>
-                                                                <p data-bind="if: ConIndicadoPara">
-                                                                    <strong>Indicado para:</strong>&nbsp;<small data-bind="text: IndicadoPara"></small>
-                                                                </p>
-                                                                <p data-bind="if: ConAclaracion" class="text-danger">
-                                                                    <strong>ACLARACIÓN:</strong>&nbsp;<small data-bind="text: Aclaracion"></small>
-                                                                </p>
-                                                            </td>
-                                                            <td class="text-right" data-bind="text: numeral(Precio()).format('0,0.00')"></td>
-                                                            <td class="text-right" data-bind="text: numeral(TotalEquipo()).format('0,0.00')"></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                            <div id="form-step-1" role="form" data-toggle="validator">
+                                <div class="col-lg-12">
+                                    <div id="accordion" role="tablist" aria-multiselectable="true">
+                                        <!--MULTIMEDIA-->
+                                        <div class="card">
+                                            <h5 class="card-header" role="tab" id="headingMultimedia">
+                                                <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseMultimedia" aria-expanded="true" aria-controls="collapseMultimedia">
+                                                    <i class="fa fa-chevron-down pull-right"></i> Multimedia
+                                                </a>
+                                            </h5>
+                                            <h6 class="card-header" role="tab">
+                                                <span class="text-primary">Incluye</span>: instalación sobre mesa de proyección (no provista),
+                                                conexión y retiro / puntero láser.<br />
+                                                <span class="text-primary">NO Incluye</span>: adaptadores para dispositivos MAC–APPLE, los que en caso de ser necesarios
+                                                deberán ser provistos por el propietario del dispositivo o solicitados con anticipación especificando sus características.<br />
+                                                <span class="text-primary">NOTA</span>: Contempla la presencia de un técnico para la conexión y prueba del equipamiento hasta media hora pasado el
+                                                horario fijado para tal fin, transcurrido ese tiempo su permanencia tiene un costo de $230 por hora.
+                                            </h6>
+                                            <div id="collapseMultimedia" class="collapse" role="tabpanel" aria-labelledby="headingMultimedia">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-center">Cantidad</th>
+                                                                <th class="text-center">Equipo</th>
+                                                                <th class="text-center">Precio</th>
+                                                                <th class="text-center">Total</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody data-bind="foreach: Equipos">
+                                                            <tr data-bind="if: Tipo == 'Multimedia'">
+                                                                <td>
+                                                                    <input data-bind="value: Cantidad" type="number" min="0" />
+                                                                </td>
+                                                                <td>
+                                                                    <h5>
+                                                                        <span data-bind="text: Nombre"></span>
+                                                                        <i class="fas fa-exclamation-triangle text-danger" data-bind="visible: SoloConAnticipacion, attr:{ 'data-toggle': 'tooltip', title: 'Sólo Pedido con Anticipación' }"></i>
+                                                                    </h5>
+                                                                    <p data-bind="text: Descripcion"></p>
+                                                                    <p data-bind="if: ConIndicadoPara">
+                                                                        <strong>Indicado para:</strong>&nbsp;<small data-bind="text: IndicadoPara"></small>
+                                                                    </p>
+                                                                    <p data-bind="if: ConAclaracion" class="text-danger">
+                                                                        <strong>ACLARACIÓN:</strong>&nbsp;<small data-bind="text: Aclaracion"></small>
+                                                                    </p>
+                                                                </td>
+                                                                <td class="text-right" data-bind="text: numeral(Precio()).format('0,0.00')"></td>
+                                                                <td class="text-right" data-bind="text: numeral(TotalEquipo()).format('0,0.00')"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p></p>
+                                        <!--SONIDO-->
+                                        <div class="card">
+                                            <h5 class="card-header" role="tab" id="headingSonido">
+                                                <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseSonido" aria-expanded="false" aria-controls="collapseSonido">
+                                                    <i class="fa fa-chevron-down pull-right"></i> Sonido
+                                                </a>
+                                            </h5>
+                                            <div id="collapseSonido" class="collapse" role="tabpanel" aria-labelledby="headingSonido">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-center">Operador</th>
+                                                                <th class="text-center">Cantidad</th>
+                                                                <th class="text-center">Equipo</th>
+                                                                <th class="text-center">Precio</th>
+                                                                <th class="text-center">Total</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody data-bind="foreach: Equipos">
+                                                            <tr data-bind="if: Tipo == 'Sonido'">
+                                                                <td class="text-center">
+                                                                    <input data-bind="checked: ConOperador" type="checkbox" class="form-control" />
+                                                                </td>
+                                                                <td>
+                                                                    <input data-bind="value: Cantidad" type="number" min="0" />
+                                                                </td>
+                                                                <td>
+                                                                    <h5>
+                                                                        <span data-bind="text: Nombre"></span>
+                                                                        <i class="fas fa-exclamation-triangle text-danger" data-bind="visible: SoloConAnticipacion, attr:{ 'data-toggle': 'tooltip', title: 'Sólo Pedido con Anticipación' }"></i>
+                                                                    </h5>
+                                                                    <p data-bind="text: Descripcion"></p>
+                                                                    <p data-bind="if: ConIndicadoPara">
+                                                                        <strong>Indicado para:</strong>&nbsp;<small data-bind="text: IndicadoPara"></small>
+                                                                    </p>
+                                                                    <p data-bind="if: ConAclaracion" class="text-danger">
+                                                                        <strong>ACLARACIÓN:</strong>&nbsp;<small data-bind="text: Aclaracion"></small>
+                                                                    </p>
+                                                                </td>
+                                                                <td class="text-right" data-bind="text: numeral(Precio()).format('0,0.00')"></td>
+                                                                <td class="text-right" data-bind="text: numeral(TotalEquipo()).format('0,0.00')"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p></p>
+                                        <!--Monitores TV-->
+                                        <div class="card">
+                                            <h5 class="card-header" role="tab" id="headingMonitores">
+                                                <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseMonitores" aria-expanded="false" aria-controls="collapseMonitores">
+                                                    <i class="fa fa-chevron-down pull-right"></i> Monitores TV
+                                                </a>
+                                            </h5>
+                                            <h6 class="card-header" role="tab">
+                                                <span class="text-primary">Incluye</span>: soporte de piso (alt. min.: 1,90mts. / alt. máx.: 2,35mts.) o mesa.
+                                            </h6>
+                                            <div id="collapseMonitores" class="collapse" role="tabpanel" aria-labelledby="headingMonitores">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-center">Cantidad</th>
+                                                                <th class="text-center">Equipo</th>
+                                                                <th class="text-center">Precio</th>
+                                                                <th class="text-center">Total</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody data-bind="foreach: Equipos">
+                                                            <tr data-bind="if: Tipo == 'Monitores TV'">
+                                                                <td>
+                                                                    <input data-bind="value: Cantidad" type="number" min="0" />
+                                                                </td>
+                                                                <td>
+                                                                    <h5>
+                                                                        <span data-bind="text: Nombre"></span>
+                                                                        <i class="fas fa-exclamation-triangle text-danger" data-bind="visible: SoloConAnticipacion, attr:{ 'data-toggle': 'tooltip', title: 'Sólo Pedido con Anticipación' }"></i>
+                                                                    </h5>
+                                                                    <p data-bind="text: Descripcion"></p>
+                                                                    <p data-bind="if: ConIndicadoPara">
+                                                                        <strong>Indicado para:</strong>&nbsp;<small data-bind="text: IndicadoPara"></small>
+                                                                    </p>
+                                                                    <p data-bind="if: ConAclaracion" class="text-danger">
+                                                                        <strong>ACLARACIÓN:</strong>&nbsp;<small data-bind="text: Aclaracion"></small>
+                                                                    </p>
+                                                                </td>
+                                                                <td class="text-right" data-bind="text: numeral(Precio()).format('0,0.00')"></td>
+                                                                <td class="text-right" data-bind="text: numeral(TotalEquipo()).format('0,0.00')"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p></p>
+                                        <!--PANTALLAS Y ROTAFOLIOS-->
+                                        <div class="card">
+                                            <h5 class="card-header" role="tab" id="headingPantallas">
+                                                <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapsePantallas" aria-expanded="false" aria-controls="collapsePantallas">
+                                                    <i class="fa fa-chevron-down pull-right"></i> Pantallas y Rotafolios
+                                                </a>
+                                            </h5>
+                                            <div id="collapsePantallas" class="collapse" role="tabpanel" aria-labelledby="headingPantallas">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-center">Cantidad</th>
+                                                                <th class="text-center">Equipo</th>
+                                                                <th class="text-center">Precio</th>
+                                                                <th class="text-center">Total</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody data-bind="foreach: Equipos">
+                                                            <tr data-bind="if: Tipo == 'Pantallas y Rotafolios'">
+                                                                <td>
+                                                                    <input data-bind="value: Cantidad" type="number" min="0" />
+                                                                </td>
+                                                                <td>
+                                                                    <h5>
+                                                                        <span data-bind="text: Nombre"></span>
+                                                                        <i class="fas fa-exclamation-triangle text-danger" data-bind="visible: SoloConAnticipacion, attr:{ 'data-toggle': 'tooltip', title: 'Sólo Pedido con Anticipación' }"></i>
+                                                                    </h5>
+                                                                    <p data-bind="text: Descripcion"></p>
+                                                                    <p data-bind="if: ConIndicadoPara">
+                                                                        <strong>Indicado para:</strong>&nbsp;<small data-bind="text: IndicadoPara"></small>
+                                                                    </p>
+                                                                    <p data-bind="if: ConAclaracion" class="text-danger">
+                                                                        <strong>ACLARACIÓN:</strong>&nbsp;<small data-bind="text: Aclaracion"></small>
+                                                                    </p>
+                                                                </td>
+                                                                <td class="text-right" data-bind="text: numeral(Precio()).format('0,0.00')"></td>
+                                                                <td class="text-right" data-bind="text: numeral(TotalEquipo()).format('0,0.00')"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p></p>
+                                        <!--ILUMINACION-->
+                                        <div class="card">
+                                            <h5 class="card-header" role="tab" id="headingIluminacion">
+                                                <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseIluminacion" aria-expanded="false" aria-controls="collapseIluminacion">
+                                                    <i class="fa fa-chevron-down pull-right"></i> Iluminación
+                                                </a>
+                                            </h5>
+                                            <div id="collapseIluminacion" class="collapse" role="tabpanel" aria-labelledby="headingIluminacion">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-center">Cantidad</th>
+                                                                <th class="text-center">Equipo</th>
+                                                                <th class="text-center">Precio</th>
+                                                                <th class="text-center">Total</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody data-bind="foreach: Equipos">
+                                                            <tr data-bind="if: Tipo == 'Iluminacion'">
+                                                                <td>
+                                                                    <input data-bind="value: Cantidad" type="number" min="0" />
+                                                                </td>
+                                                                <td>
+                                                                    <h5>
+                                                                        <span data-bind="text: Nombre"></span>
+                                                                        <i class="fas fa-exclamation-triangle text-danger" data-bind="visible: SoloConAnticipacion, attr:{ 'data-toggle': 'tooltip', title: 'Sólo Pedido con Anticipación' }"></i>
+                                                                    </h5>
+                                                                    <p data-bind="text: Descripcion"></p>
+                                                                    <p data-bind="if: ConIndicadoPara">
+                                                                        <strong>Indicado para:</strong>&nbsp;<small data-bind="text: IndicadoPara"></small>
+                                                                    </p>
+                                                                    <p data-bind="if: ConAclaracion" class="text-danger">
+                                                                        <strong>ACLARACIÓN:</strong>&nbsp;<small data-bind="text: Aclaracion"></small>
+                                                                    </p>
+                                                                </td>
+                                                                <td class="text-right" data-bind="text: numeral(Precio()).format('0,0.00')"></td>
+                                                                <td class="text-right" data-bind="text: numeral(TotalEquipo()).format('0,0.00')"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p></p>
+                                        <!--OTROS-->
+                                        <div class="card">
+                                            <h5 class="card-header" role="tab" id="headingOtros">
+                                                <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseOtros" aria-expanded="false" aria-controls="collapseOtros">
+                                                    <i class="fa fa-chevron-down pull-right"></i> Otros
+                                                </a>
+                                            </h5>
+                                            <div id="collapseOtros" class="collapse" role="tabpanel" aria-labelledby="headingOtros">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-center">Cantidad</th>
+                                                                <th class="text-center">Equipo</th>
+                                                                <th class="text-center">Precio</th>
+                                                                <th class="text-center">Total</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody data-bind="foreach: Equipos">
+                                                            <tr data-bind="if: Tipo == 'Otros'">
+                                                                <td>
+                                                                    <input data-bind="value: Cantidad" type="number" min="0" />
+                                                                </td>
+                                                                <td>
+                                                                    <h5>
+                                                                        <span data-bind="text: Nombre"></span>
+                                                                        <i class="fas fa-exclamation-triangle text-danger" data-bind="visible: SoloConAnticipacion, attr:{ 'data-toggle': 'tooltip', title: 'Sólo Pedido con Anticipación' }"></i>
+                                                                    </h5>
+                                                                    <p data-bind="text: Descripcion"></p>
+                                                                    <p data-bind="if: ConIndicadoPara">
+                                                                        <strong>Indicado para:</strong>&nbsp;<small data-bind="text: IndicadoPara"></small>
+                                                                    </p>
+                                                                    <p data-bind="if: ConAclaracion" class="text-danger">
+                                                                        <strong>ACLARACIÓN:</strong>&nbsp;<small data-bind="text: Aclaracion"></small>
+                                                                    </p>
+                                                                </td>
+                                                                <td class="text-right" data-bind="text: numeral(Precio()).format('0,0.00')"></td>
+                                                                <td class="text-right" data-bind="text: numeral(TotalEquipo()).format('0,0.00')"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p></p>
+                                        <!--OPERADORES-->
+                                        <div class="card">
+                                            <h5 class="card-header" role="tab" id="headingOperadores">
+                                                <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseOperadores" aria-expanded="false" aria-controls="collapseOperadores">
+                                                    <i class="fa fa-chevron-down pull-right"></i> Operadores
+                                                </a>
+                                            </h5>
+                                            <div id="collapseOperadores" class="collapse" role="tabpanel" aria-labelledby="headingOperadores">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered table-hover">
+                                                        <tbody data-bind="foreach: Equipos">
+                                                            <tr data-bind="if: Tipo == 'Operador'">
+                                                                <td>
+                                                                    <input data-bind="value: Cantidad" type="number" min="0" />
+                                                                </td>
+                                                                <td>
+                                                                    <h5>
+                                                                        <span data-bind="text: Nombre"></span>
+                                                                        <i class="fas fa-exclamation-triangle text-danger" data-bind="visible: SoloConAnticipacion, attr:{ 'data-toggle': 'tooltip', title: 'Sólo Pedido con Anticipación' }"></i>
+                                                                    </h5>
+                                                                    <p data-bind="text: Descripcion"></p>
+                                                                    <p data-bind="if: ConIndicadoPara">
+                                                                        <strong>Indicado para:</strong>&nbsp;<small data-bind="text: IndicadoPara"></small>
+                                                                    </p>
+                                                                    <p data-bind="if: ConAclaracion" class="text-danger">
+                                                                        <strong>ACLARACIÓN:</strong>&nbsp;<small data-bind="text: Aclaracion"></small>
+                                                                    </p>
+                                                                </td>
+                                                                <td class="text-right" data-bind="text: numeral(Precio()).format('0,0.00')"></td>
+                                                                <td class="text-right" data-bind="text: numeral(TotalEquipo()).format('0,0.00')"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <p></p>
-                                    <!--SONIDO-->
-                                    <div class="card">
-                                        <h5 class="card-header" role="tab" id="headingSonido">
-                                            <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseSonido" aria-expanded="false" aria-controls="collapseSonido">
-                                                <i class="fa fa-chevron-down pull-right"></i> Sonido
-                                            </a>
-                                        </h5>
-                                        <div id="collapseSonido" class="collapse" role="tabpanel" aria-labelledby="headingSonido">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered table-hover">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="text-center">Operador</th>
-                                                            <th class="text-center">Cantidad</th>
-                                                            <th class="text-center">Equipo</th>
-                                                            <th class="text-center">Precio</th>
-                                                            <th class="text-center">Total</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody data-bind="foreach: Equipos">
-                                                        <tr data-bind="if: Tipo == 'Sonido'">
-                                                            <td class="text-center">
-                                                                <input data-bind="value: ConOperador" type="checkbox" class="form-control" />
-                                                            </td>
-                                                            <td>
-                                                                <input data-bind="value: Cantidad" type="number" min="0" />
-                                                            </td>
-                                                            <td>
-                                                                <h5>
-                                                                    <span data-bind="text: Nombre"></span>
-                                                                    <i class="fas fa-exclamation-triangle text-danger" data-bind="visible: SoloConAnticipacion, attr:{ 'data-toggle': 'tooltip', title: 'Sólo Pedido con Anticipación' }"></i>
-                                                                </h5>
-                                                                <p data-bind="text: Descripcion"></p>
-                                                                <p data-bind="if: ConIndicadoPara">
-                                                                    <strong>Indicado para:</strong>&nbsp;<small data-bind="text: IndicadoPara"></small>
-                                                                </p>
-                                                                <p data-bind="if: ConAclaracion" class="text-danger">
-                                                                    <strong>ACLARACIÓN:</strong>&nbsp;<small data-bind="text: Aclaracion"></small>
-                                                                </p>
-                                                            </td>
-                                                            <td class="text-right" data-bind="text: numeral(Precio()).format('0,0.00')"></td>
-                                                            <td class="text-right" data-bind="text: numeral(TotalEquipo()).format('0,0.00')"></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p></p>
-                                    <!--Monitores TV-->
-                                    <div class="card">
-                                        <h5 class="card-header" role="tab" id="headingMonitores">
-                                            <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseMonitores" aria-expanded="false" aria-controls="collapseMonitores">
-                                                <i class="fa fa-chevron-down pull-right"></i> Monitores TV
-                                            </a>
-                                        </h5>
-                                        <h6 class="card-header" role="tab">
-                                            <span class="text-primary">Incluye</span>: soporte de piso (alt. min.: 1,90mts. / alt. máx.: 2,35mts.) o mesa.
-                                        </h6>
-                                        <div id="collapseMonitores" class="collapse" role="tabpanel" aria-labelledby="headingMonitores">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered table-hover">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="text-center">Cantidad</th>
-                                                            <th class="text-center">Equipo</th>
-                                                            <th class="text-center">Precio</th>
-                                                            <th class="text-center">Total</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody data-bind="foreach: Equipos">
-                                                        <tr data-bind="if: Tipo == 'Monitores TV'">
-                                                            <td>
-                                                                <input data-bind="value: Cantidad" type="number" min="0" />
-                                                            </td>
-                                                            <td>
-                                                                <h5>
-                                                                    <span data-bind="text: Nombre"></span>
-                                                                    <i class="fas fa-exclamation-triangle text-danger" data-bind="visible: SoloConAnticipacion, attr:{ 'data-toggle': 'tooltip', title: 'Sólo Pedido con Anticipación' }"></i>
-                                                                </h5>
-                                                                <p data-bind="text: Descripcion"></p>
-                                                                <p data-bind="if: ConIndicadoPara">
-                                                                    <strong>Indicado para:</strong>&nbsp;<small data-bind="text: IndicadoPara"></small>
-                                                                </p>
-                                                                <p data-bind="if: ConAclaracion" class="text-danger">
-                                                                    <strong>ACLARACIÓN:</strong>&nbsp;<small data-bind="text: Aclaracion"></small>
-                                                                </p>
-                                                            </td>
-                                                            <td class="text-right" data-bind="text: numeral(Precio()).format('0,0.00')"></td>
-                                                            <td class="text-right" data-bind="text: numeral(TotalEquipo()).format('0,0.00')"></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p></p>
-                                    <!--PANTALLAS Y ROTAFOLIOS-->
-                                    <div class="card">
-                                        <h5 class="card-header" role="tab" id="headingPantallas">
-                                            <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapsePantallas" aria-expanded="false" aria-controls="collapsePantallas">
-                                                <i class="fa fa-chevron-down pull-right"></i> Pantallas y Rotafolios
-                                            </a>
-                                        </h5>
-                                        <div id="collapsePantallas" class="collapse" role="tabpanel" aria-labelledby="headingPantallas">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered table-hover">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="text-center">Cantidad</th>
-                                                            <th class="text-center">Equipo</th>
-                                                            <th class="text-center">Precio</th>
-                                                            <th class="text-center">Total</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody data-bind="foreach: Equipos">
-                                                        <tr data-bind="if: Tipo == 'Pantallas y Rotafolios'">
-                                                            <td>
-                                                                <input data-bind="value: Cantidad" type="number" min="0" />
-                                                            </td>
-                                                            <td>
-                                                                <h5>
-                                                                    <span data-bind="text: Nombre"></span>
-                                                                    <i class="fas fa-exclamation-triangle text-danger" data-bind="visible: SoloConAnticipacion, attr:{ 'data-toggle': 'tooltip', title: 'Sólo Pedido con Anticipación' }"></i>
-                                                                </h5>
-                                                                <p data-bind="text: Descripcion"></p>
-                                                                <p data-bind="if: ConIndicadoPara">
-                                                                    <strong>Indicado para:</strong>&nbsp;<small data-bind="text: IndicadoPara"></small>
-                                                                </p>
-                                                                <p data-bind="if: ConAclaracion" class="text-danger">
-                                                                    <strong>ACLARACIÓN:</strong>&nbsp;<small data-bind="text: Aclaracion"></small>
-                                                                </p>
-                                                            </td>
-                                                            <td class="text-right" data-bind="text: numeral(Precio()).format('0,0.00')"></td>
-                                                            <td class="text-right" data-bind="text: numeral(TotalEquipo()).format('0,0.00')"></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p></p>
-                                    <!--ILUMINACION-->
-                                    <div class="card">
-                                        <h5 class="card-header" role="tab" id="headingIluminacion">
-                                            <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseIluminacion" aria-expanded="false" aria-controls="collapseIluminacion">
-                                                <i class="fa fa-chevron-down pull-right"></i> Iluminación
-                                            </a>
-                                        </h5>
-                                        <div id="collapseIluminacion" class="collapse" role="tabpanel" aria-labelledby="headingIluminacion">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered table-hover">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="text-center">Cantidad</th>
-                                                            <th class="text-center">Equipo</th>
-                                                            <th class="text-center">Precio</th>
-                                                            <th class="text-center">Total</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody data-bind="foreach: Equipos">
-                                                        <tr data-bind="if: Tipo == 'Iluminacion'">
-                                                            <td>
-                                                                <input data-bind="value: Cantidad" type="number" min="0" />
-                                                            </td>
-                                                            <td>
-                                                                <h5>
-                                                                    <span data-bind="text: Nombre"></span>
-                                                                    <i class="fas fa-exclamation-triangle text-danger" data-bind="visible: SoloConAnticipacion, attr:{ 'data-toggle': 'tooltip', title: 'Sólo Pedido con Anticipación' }"></i>
-                                                                </h5>
-                                                                <p data-bind="text: Descripcion"></p>
-                                                                <p data-bind="if: ConIndicadoPara">
-                                                                    <strong>Indicado para:</strong>&nbsp;<small data-bind="text: IndicadoPara"></small>
-                                                                </p>
-                                                                <p data-bind="if: ConAclaracion" class="text-danger">
-                                                                    <strong>ACLARACIÓN:</strong>&nbsp;<small data-bind="text: Aclaracion"></small>
-                                                                </p>
-                                                            </td>
-                                                            <td class="text-right" data-bind="text: numeral(Precio()).format('0,0.00')"></td>
-                                                            <td class="text-right" data-bind="text: numeral(TotalEquipo()).format('0,0.00')"></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p></p>
-                                    <!--OTROS-->
-                                    <div class="card">
-                                        <h5 class="card-header" role="tab" id="headingOtros">
-                                            <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseOtros" aria-expanded="false" aria-controls="collapseOtros">
-                                                <i class="fa fa-chevron-down pull-right"></i> Otros
-                                            </a>
-                                        </h5>
-                                        <div id="collapseOtros" class="collapse" role="tabpanel" aria-labelledby="headingOtros">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered table-hover">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="text-center">Cantidad</th>
-                                                            <th class="text-center">Equipo</th>
-                                                            <th class="text-center">Precio</th>
-                                                            <th class="text-center">Total</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody data-bind="foreach: Equipos">
-                                                        <tr data-bind="if: Tipo == 'Otros'">
-                                                            <td>
-                                                                <input data-bind="value: Cantidad" type="number" min="0" />
-                                                            </td>
-                                                            <td>
-                                                                <h5>
-                                                                    <span data-bind="text: Nombre"></span>
-                                                                    <i class="fas fa-exclamation-triangle text-danger" data-bind="visible: SoloConAnticipacion, attr:{ 'data-toggle': 'tooltip', title: 'Sólo Pedido con Anticipación' }"></i>
-                                                                </h5>
-                                                                <p data-bind="text: Descripcion"></p>
-                                                                <p data-bind="if: ConIndicadoPara">
-                                                                    <strong>Indicado para:</strong>&nbsp;<small data-bind="text: IndicadoPara"></small>
-                                                                </p>
-                                                                <p data-bind="if: ConAclaracion" class="text-danger">
-                                                                    <strong>ACLARACIÓN:</strong>&nbsp;<small data-bind="text: Aclaracion"></small>
-                                                                </p>
-                                                            </td>
-                                                            <td class="text-right" data-bind="text: numeral(Precio()).format('0,0.00')"></td>
-                                                            <td class="text-right" data-bind="text: numeral(TotalEquipo()).format('0,0.00')"></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p></p>
-                                    <!--OPERADORES-->
-                                    <div class="card">
-                                        <h5 class="card-header" role="tab" id="headingOperadores">
-                                            <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseOperadores" aria-expanded="false" aria-controls="collapseOperadores">
-                                                <i class="fa fa-chevron-down pull-right"></i> Operadores
-                                            </a>
-                                        </h5>
-                                        <div id="collapseOperadores" class="collapse" role="tabpanel" aria-labelledby="headingOperadores">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered table-hover">
-                                                    <tbody data-bind="foreach: Equipos">
-                                                        <tr data-bind="if: Tipo == 'Operador'">
-                                                            <td>
-                                                                <input data-bind="value: Cantidad" type="number" min="0" />
-                                                            </td>
-                                                            <td>
-                                                                <h5>
-                                                                    <span data-bind="text: Nombre"></span>
-                                                                    <i class="fas fa-exclamation-triangle text-danger" data-bind="visible: SoloConAnticipacion, attr:{ 'data-toggle': 'tooltip', title: 'Sólo Pedido con Anticipación' }"></i>
-                                                                </h5>
-                                                                <p data-bind="text: Descripcion"></p>
-                                                                <p data-bind="if: ConIndicadoPara">
-                                                                    <strong>Indicado para:</strong>&nbsp;<small data-bind="text: IndicadoPara"></small>
-                                                                </p>
-                                                                <p data-bind="if: ConAclaracion" class="text-danger">
-                                                                    <strong>ACLARACIÓN:</strong>&nbsp;<small data-bind="text: Aclaracion"></small>
-                                                                </p>
-                                                            </td>
-                                                            <td class="text-right" data-bind="text: numeral(Precio()).format('0,0.00')"></td>
-                                                            <td class="text-right" data-bind="text: numeral(TotalEquipo()).format('0,0.00')"></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <hr />
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <span>Total</span>
+                                            <strong class="float-right" data-bind="text: numeral(TotalPedido()).format('0,0.00')"></strong>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span>I.V.A.</span>
+                                            <strong class="float-right" data-bind="text: numeral(IVA()).format('0,0.00')"></strong>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span>Final</span>
+                                            <strong class="float-right" data-bind="text: numeral(TotalFinal()).format('0,0.00')"></strong>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <hr />
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <span>Total</span>
-                                        <strong class="float-right" data-bind="text: numeral(TotalPedido()).format('0,0.00')"></strong>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <span>I.V.A.</span>
-                                        <strong class="float-right" data-bind="text: numeral(IVA()).format('0,0.00')"></strong>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <span>Final</span>
-                                        <strong class="float-right" data-bind="text: numeral(TotalFinal()).format('0,0.00')"></strong>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                         <!--OPERADORES-->
                         <!--DESCUENTOS/RECARGOS-->
-                        <div id="step-3">
-                            <h3 class="section-heading text-primary">Descuentos / Recargos</h3>
-                            <div class="col-lg-12">
-                                <div class="card">
-                                    <h5 class="card-header" role="tab" id="headingDescuentos">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseDescuentos" aria-expanded="true" aria-controls="collapseDescuentos" class="d-block">
-                                            <i class="fa fa-chevron-down pull-right"></i> Descuentos
-                                        </a>
-                                    </h5>
-                                    <h6 class="card-header" role="tab">
-                                        <span class="text-primary">Importante</span>: Estos descuentos se aplicarán en reuniones de días consecutivos que sean para un mismo cliente y cuyo equipamiento no deba ser desarmado y rearmado.<br />
-                                        En caso que no incluyan presencia de operador no está contemplada la supervisación diaria de los equipos.
-                                    </h6>
-                                    <div id="collapseDescuentos" class="collapse show" role="tabpanel" aria-labelledby="headingDescuentos">
-                                        <div class="table-responsive">
-                                            <table class="table table-bordered">
-                                                <tbody>
-                                                    <tr data-bind="css: { 'text-muted': CantidadDias() != 2 }">
-                                                        <td>
-                                                            <h5>
-                                                                <span>Por 2 Días consecutivos</span>
-                                                            </h5>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <h5>
-                                                                <span>10%</span>
-                                                            </h5>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-bind="css: { 'text-muted': CantidadDias() != 3 }">
-                                                        <td>
-                                                            <h5>
-                                                                <span>Por 3 Días consecutivos</span>
-                                                            </h5>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <h5>
-                                                                <span>13%</span>
-                                                            </h5>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-bind="css: { 'text-muted': CantidadDias() != 4 }">
-                                                        <td>
-                                                            <h5>
-                                                                <span>Por 4 Días consecutivos</span>
-                                                            </h5>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <h5>
-                                                                <span>17%</span>
-                                                            </h5>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-bind="css: { 'text-muted': CantidadDias() < 5 }">
-                                                        <td>
-                                                            <h5>
-                                                                <span>Por 5 Días consecutivos</span>
-                                                            </h5>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <h5>
-                                                                <span>20%</span>
-                                                            </h5>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                        <div id="step-2">
+                            <h3 class="section-heading text-primary">DESCUENTOS/RECARGOS</h3>
+                            <div id="form-step-2" role="form" data-toggle="validator">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <h5 class="card-header" role="tab" id="headingDescuentos">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseDescuentos" aria-expanded="true" aria-controls="collapseDescuentos" class="d-block">
+                                                <i class="fa fa-chevron-down pull-right"></i> Descuentos
+                                            </a>
+                                        </h5>
+                                        <h6 class="card-header" role="tab">
+                                            <span class="text-primary">Importante</span>: Estos descuentos se aplicarán en reuniones de días consecutivos que sean para un mismo cliente y cuyo equipamiento no deba ser desarmado y rearmado.<br />
+                                            En caso que no incluyan presencia de operador no está contemplada la supervisación diaria de los equipos.
+                                        </h6>
+                                        <div id="collapseDescuentos" class="collapse show" role="tabpanel" aria-labelledby="headingDescuentos">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <tbody>
+                                                        <tr data-bind="css: { 'text-muted': CantidadDias() != 2 }">
+                                                            <td>
+                                                                <h5>
+                                                                    <span>Por 2 Días consecutivos</span>
+                                                                </h5>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <h5>
+                                                                    <span>10%</span>
+                                                                </h5>
+                                                            </td>
+                                                        </tr>
+                                                        <tr data-bind="css: { 'text-muted': CantidadDias() != 3 }">
+                                                            <td>
+                                                                <h5>
+                                                                    <span>Por 3 Días consecutivos</span>
+                                                                </h5>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <h5>
+                                                                    <span>13%</span>
+                                                                </h5>
+                                                            </td>
+                                                        </tr>
+                                                        <tr data-bind="css: { 'text-muted': CantidadDias() != 4 }">
+                                                            <td>
+                                                                <h5>
+                                                                    <span>Por 4 Días consecutivos</span>
+                                                                </h5>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <h5>
+                                                                    <span>17%</span>
+                                                                </h5>
+                                                            </td>
+                                                        </tr>
+                                                        <tr data-bind="css: { 'text-muted': CantidadDias() < 5 }">
+                                                            <td>
+                                                                <h5>
+                                                                    <span>Por 5 Días consecutivos</span>
+                                                                </h5>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <h5>
+                                                                    <span>20%</span>
+                                                                </h5>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <p></p>
-                                <div class="card">
-                                    <h5 class="card-header" role="tab" id="headingRecargo">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseRecargo" aria-expanded="true" aria-controls="collapseRecargo" class="d-block">
-                                            <i class="fa fa-chevron-down pull-right"></i> Recargos
-                                        </a>
-                                    </h5>
-                                    <h6 class="card-header" role="tab">
-                                        <span class="text-primary">Importante</span>: Estos descuentos se aplicarán en reuniones de días consecutivos que sean para un mismo cliente y cuyo equipamiento no deba ser desarmado y rearmado.<br />
-                                        En caso que no incluyan presencia de operador no está contemplada la supervisación diaria de los equipos.
-                                    </h6>
-                                    <div id="collapseRecargo" class="collapse show" role="tabpanel" aria-labelledby="headingRecargo">
-                                        <div class="table-responsive">
-                                            <table class="table table-bordered table-hover">
-                                                <tbody>
-                                                    <tr data-bind="css: { 'text-muted': RecargoNoHabilConOperador() > 0 }">
-                                                        <td>
-                                                            <h5>
-                                                                <span>RECARGO DIAS NO HABILES / SERVICIOS CON OPERADOR</span>
-                                                            </h5>
-                                                            <h6>
-                                                                Los servicios con operador (ej: SONIDO BASE) en días no hábiles (sábados a la tarde, domingos o feriados)
-                                                                sufrirán el siguiente recargo.
-                                                            </h6>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <h5>
-                                                                <span data-bind="text: numeral(1560).format('0,0.00')"></span>
-                                                            </h5>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-bind="css: { 'text-muted': RecargoNoHabilSinOperador() > 0 }">
-                                                        <td>
-                                                            <h5>
-                                                                <span>RECARGO DIAS NO HABILES / SERVICIOS SIN OPERADOR</span>
-                                                            </h5>
-                                                            <h6>
-                                                                Los servicios sin operador (ej: PROY. MULTIMEDIA) en días no hábiles (sábados a la tarde, domingos o feriados) sufrirán el siguiente recargo.
-                                                            </h6>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <h5>
-                                                                <span data-bind="text: numeral(780).format('0,0.00')"></span>
-                                                            </h5>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                    <p></p>
+                                    <div class="card">
+                                        <h5 class="card-header" role="tab" id="headingRecargo">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseRecargo" aria-expanded="true" aria-controls="collapseRecargo" class="d-block">
+                                                <i class="fa fa-chevron-down pull-right"></i> Recargos
+                                            </a>
+                                        </h5>
+                                        <h6 class="card-header" role="tab">
+                                            <span class="text-primary">Importante</span>: Estos descuentos se aplicarán en reuniones de días consecutivos que sean para un mismo cliente y cuyo equipamiento no deba ser desarmado y rearmado.<br />
+                                            En caso que no incluyan presencia de operador no está contemplada la supervisación diaria de los equipos.
+                                        </h6>
+                                        <div id="collapseRecargo" class="collapse show" role="tabpanel" aria-labelledby="headingRecargo">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <tbody>
+                                                        <tr data-bind="css: { 'text-muted': RecargoNoHabilConOperador() == 0 }">
+                                                            <td>
+                                                                <h5>
+                                                                    <span>RECARGO DIAS NO HABILES / SERVICIOS CON OPERADOR</span>
+                                                                </h5>
+                                                                <h6>
+                                                                    Los servicios con operador (ej: SONIDO BASE) en días no hábiles (sábados a la tarde, domingos o feriados)
+                                                                    sufrirán el siguiente recargo.
+                                                                </h6>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <h5>
+                                                                    <span data-bind="text: numeral(1560).format('0,0.00')"></span>
+                                                                </h5>
+                                                            </td>
+                                                        </tr>
+                                                        <tr data-bind="css: { 'text-muted': RecargoNoHabilSinOperador() == 0 }">
+                                                            <td>
+                                                                <h5>
+                                                                    <span>RECARGO DIAS NO HABILES / SERVICIOS SIN OPERADOR</span>
+                                                                </h5>
+                                                                <h6>
+                                                                    Los servicios sin operador (ej: PROY. MULTIMEDIA) en días no hábiles (sábados a la tarde, domingos o feriados) sufrirán el siguiente recargo.
+                                                                </h6>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <h5>
+                                                                    <span data-bind="text: numeral(780).format('0,0.00')"></span>
+                                                                </h5>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!--OBSERVACIONES-->
-                        <div id="step-4">
-                            <h3 class="section-heading text-primary">Observaciones</h3>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <textarea class="form-control" id="Observaciones" name="Observaciones" data-bind="value: Observaciones" rows="5"></textarea>
+                        <div id="step-3">
+                            <h3 class="section-heading text-primary">OBSERVACIONES</h3>
+                            <div id="form-step-3" role="form" data-toggle="validator">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="Observaciones" name="Observaciones" data-bind="value: Observaciones" rows="5"></textarea>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <!--VISTA PREVIA-->
-                        <div id="step-5">
-                            <h3 class="section-heading text-primary">Vista Previa</h3>
+                        <div id="step-4">
+                            <h3 class="section-heading text-primary">VISTA PREVIA</h3>
                             <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-body">
@@ -641,9 +654,12 @@
                                                 <tbody data-bind="foreach: EquiposRequeridos">
                                                     <tr>
                                                         <td data-bind="text: Cantidad"></td>
-                                                        <td data-bind="text: Nombre"></td>
-                                                        <td data-bind="text: numeral(Precio).format('0,0.00')"></td>
-                                                        <td data-bind="text: numeral(TotalEquipo).format('0,0.00')" class="text-right"></td>
+                                                        <td>
+                                                            <i class="fas fa-info-circle" data-bind="visible: ConOperador(), attr:{ 'data-toggle': 'tooltip', title: 'Con Operador' }"></i>
+                                                            <span data-bind="text: Nombre"></span>
+                                                        </td>
+                                                        <td data-bind="text: numeral(Precio()).format('0,0.00')"></td>
+                                                        <td data-bind="text: numeral(TotalEquipo()).format('0,0.00')" class="text-right"></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -663,7 +679,7 @@
                                                 <li class="list-group-item">
                                                     <span>
                                                         Recargo
-                                                        <i class="fas fa-info-circle" data-bind="visible: Recargo > 0, attr:{ 'data-toggle': 'tooltip', title: TituloRecargo }"></i>
+                                                        <i class="fas fa-info-circle" data-bind="visible: Recargo() > 0, attr:{ 'data-toggle': 'tooltip', title: TituloRecargo }"></i>
                                                     </span>
                                                     <strong class="float-right" data-bind="text: numeral(Recargo()).format('0,0.00')"></strong>
                                                 </li>
@@ -679,7 +695,12 @@
                                             <p class="card-text mb-2 text-muted" data-bind="text: Observaciones"></p>
                                         </div>
                                         <hr />
-                                        <button data-bind="click: EnviarPedido" class="btn btn-primary">Enviar</button>
+                                        <div class="col-xs-12">
+                                            <div class="progress" id="progressBar" hidden="hidden">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                                            </div>
+                                            <button id="btnEnviar" data-bind="click: EnviarPedido" class="btn btn-primary float-right">Enviar</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -687,11 +708,12 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 </div>
 <!--Alerts-->
-<div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;" id="AlertMensaje" hidden>
+<div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;" id="AlertMensaje" hidden="hidden">
     <div class="toast" style="position: absolute; top: 0; right: 0;">
         <div class="toast-header">
             <strong class="mr-auto" id="AlertTitle"></strong>
@@ -705,15 +727,31 @@
 </div>
 
 @section scripts{
+    @Scripts.Render("~/bundles/bootstrap-validator")
     @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/jquery-blockUI")
     @Scripts.Render("~/bundles/jquery-smartwizard")
     @Scripts.Render("~/bundles/moment-holiday")
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
+            //smartwizard
+            var btnCancel = $('<button></button>').text('Cancel')
+                .addClass('btn btn-danger')
+                .on('click', function () {
+                    var r = confirm("El formulario de pedido se reiniciará con los valores default. ¿Desea continuar?");
+                    if (r == true) {
+                        var url = '@Url.Action("Create", "Pedido")';
+                        window.location.href = url;
+                    }
+                });
             $('#smartwizard').smartWizard({
                 selected: 0,
+                toolbarSettings: {
+                    toolbarPosition: 'bottom',
+                    toolbarExtraButtons: [btnCancel]
+                },
                 lang: {  // Language variables
                     next: 'Siguiente',
                     previous: 'Anterior'
@@ -721,14 +759,38 @@
                 theme: 'arrows',
                 transitionEffect: 'slide',
                 transitionTime: '400',
-                keyNavigation: false
+                keyNavigation: false,
+                anchorSettings: {
+                    markDoneStep: true, // add done css
+                    markAllPreviousStepsAsDone: true, // When a step selected by url hash, all previous steps are marked done
+                    removeDoneStepOnNavigateBack: true, // While navigate back done step after active step will be cleared
+                    enableAnchorOnDoneStep: true // Enable/Disable the done steps navigation
+                }
+            });
+
+            $("#smartwizard").on("leaveStep", function (e, anchorObject, stepNumber, stepDirection) {
+                var elmForm = $("#form-step-" + stepNumber);
+                // stepDirection === 'forward' :- this condition allows to do the form validation
+                // only on forward navigation, that makes easy navigation on backwards still do the validation when going next
+                if (stepDirection === 'forward' && elmForm) {
+                    elmForm.validator('validate');
+                    var elmErr = elmForm.children().children().children('.has-error');
+                    if (elmErr && elmErr.length > 0) {
+                        // Form validation failed
+                        return false;
+                    }
+                }
+                return true;
             });
 
             $("#smartwizard").on("showStep", function (e, anchorObject, stepNumber, stepDirection) {
                 //Nos vamos al principio
                 window.scrollTo(0, 0);
+                $('[data-toggle="tooltip"]').tooltip();
             });
 
+            //--
+            //datetimepicker
             $('#Prueba').datetimepicker({
                 stepping: 15,
                 minDate: moment(new Date()).add(1, 'days').subtract(1, 'hour'),
@@ -757,12 +819,12 @@
                 //para forzar el set de los valores en model
                 viewModel.Finalizacion(moment(e.date).format('DD/MM/YYYY HH:mm'));
             });
-            //
+            //--
 
             var Equipo = function(data) {
                 var self = this;
                 self.SoloConAnticipacion = data.SoloConAnticipacion;
-                self.ConOperador = ko.observable();
+                self.ConOperador = ko.observable(false);
                 self.Cantidad = ko.observable(data.Cantidad);
                 self.Tipo = data.Tipo;
                 self.Nombre = data.Nombre;
@@ -810,26 +872,11 @@
                 }, self);
 
                 self.PedidoConOperador = ko.computed(function () {
-                    var operador = false;
                     for (var i = 0; i < self.EquiposRequeridos().length; i++) {
                         if (self.EquiposRequeridos()[i].ConOperador())
                             return true;
                     }
-                    return operador;
-                }, self);
-
-                self.RecargoNoHabilConOperador = ko.observable();
-                self.RecargoNoHabilSinOperador = ko.observable();
-
-                self.TituloRecargo = ko.computed(function () {
-                    var mensaje = "";
-
-                    if (self.RecargoNoHabilConOperador() > 0)
-                        mensaje = "Recargo No habil con operador: $" + self.RecargoNoHabilConOperador();
-                    if (self.RecargoNoHabilSinOperador() > 0)
-                        mensaje = "Recargo No habil sin operador: $" + self.RecargoNoHabilSinOperador();
-
-                    return mensaje;
+                    return false;
                 }, self);
 
                 self.TotalPedido = ko.computed(function () {
@@ -837,11 +884,13 @@
                     for (var i = 0; i < self.Equipos().length; i++) {
                         total = total + self.Equipos()[i].TotalEquipo();
                     }
-                    return total;
+                    return total * self.CantidadDias();
                 }, self);
+
                 self.IVA = ko.computed(function () {
                     return self.TotalPedido() * 0.21;
                 }, self);
+
                 self.Descuento = ko.computed(function () {
                     var descuento = 0;
                     if (self.CantidadDias() == 2) {
@@ -858,55 +907,98 @@
                     }
                     return descuento;
                 }, self);
-                self.Recargo = ko.computed(function () {
+
+                self.RecargoNoHabilConOperador = ko.computed(function () {
                     var recargoNoHabilConOperador = 0;
-                    var recargoNoHabilSinOperador = 0;
+                    var total = self.TotalPedido();
 
                     //Se buscan que los dias del evento esten dentro de los dias habiles
                     //de no ser asi sufriran un recargo
-                    var inicio = moment(self.Inicio(), 'dd/MM/yyyy HH:mm');
-                    var fin = moment(self.Finalizacion(), 'dd/MM/yyyy HH:mm');
+                    var inicio = moment(self.Inicio(), 'DD/MM/YYYY HH:mm');
+                    var fin = moment(self.Finalizacion(), 'DD/MM/YYYY HH:mm');
 
-                    if (self.EquiposRequeridos().length > 0) {
-                        for (var i = inicio; i <= fin; i = i.add(1, 'days')) {
+                    if (self.PedidoConOperador()) {
+                        for (var i = inicio; i.isSameOrBefore(fin); i = i.add(1, 'days')) {
                             //Control feriado y Domingo
                             if (moment(i.format('dd-MM-yyyy')).isHoliday() || i.day() == 0) {
-                                if (self.PedidoConOperador()) {
-                                    recargoNoHabilConOperador = recargoNoHabilConOperador + 1560;
-                                }
-                                else {
-                                    recargoNoHabilSinOperador = recargoNoHabilSinOperador + 780;
-                                }
-                                continue;
+                                recargoNoHabilConOperador = recargoNoHabilConOperador + 1560;
                             }
+
                             //Sabado
                             if (i.day() == 6) {
-                                if (i.hour() < 12) {
+                                if (i.hour() <= 12) {
                                     var horasParaMediodia = 12 - i.hour();
                                     var diaAux = i.add(horasParaMediodia, 'hours');
                                     if (diaAux.isBefore(fin)) {
-                                        if (self.PedidoConOperador()) {
-                                            recargoNoHabilConOperador = recargoNoHabilConOperador + 1560;
-                                        }
-                                        else {
-                                            recargoNoHabilSinOperador = recargoNoHabilSinOperador + 780;
-                                        }
+                                        recargoNoHabilConOperador = recargoNoHabilConOperador + 1560;
                                     }
+                                }
+                                else {
+                                    recargoNoHabilConOperador = recargoNoHabilConOperador + 1560;
                                 }
                             }
                         }
                     }
 
-                    self.RecargoNoHabilConOperador(recargoNoHabilConOperador);
-                    self.RecargoNoHabilSinOperador(recargoNoHabilSinOperador);
-
-                    return recargoNoHabilConOperador + recargoNoHabilSinOperador;
+                    return recargoNoHabilConOperador;
                 }, self);
+                self.RecargoNoHabilSinOperador = ko.computed(function () {
+                    var recargoNoHabilSinOperador = 0;
+                    var total = self.TotalPedido();
+
+                    //Se buscan que los dias del evento esten dentro de los dias habiles
+                    //de no ser asi sufriran un recargo
+                    var inicio = moment(self.Inicio(), 'DD/MM/YYYY HH:mm');
+                    var fin = moment(self.Finalizacion(), 'DD/MM/YYYY HH:mm');
+
+                    if (!self.PedidoConOperador()) {
+                        for (var i = inicio; i.isSameOrBefore(fin); i = i.add(1, 'days')) {
+                            //Control feriado y Domingo
+                            if (moment(i.format('dd-MM-yyyy')).isHoliday() || i.day() == 0) {
+                                recargoNoHabilSinOperador = recargoNoHabilSinOperador + 780;
+                            }
+
+                            //Sabado
+                            if (i.day() == 6) {
+                                if (i.hour() <= 12) {
+                                    var horasParaMediodia = 12 - i.hour();
+                                    var diaAux = i.add(horasParaMediodia, 'hours');
+                                    if (diaAux.isBefore(fin)) {
+                                        recargoNoHabilSinOperador = recargoNoHabilSinOperador + 780;
+                                    }
+                                }
+                                else {
+                                    recargoNoHabilSinOperador = recargoNoHabilSinOperador + 780;
+                                }
+                            }
+                        }
+                    }
+
+                    return recargoNoHabilSinOperador;
+                }, self);
+                self.Recargo = ko.computed(function () {
+                    return self.RecargoNoHabilConOperador() + self.RecargoNoHabilSinOperador();
+                }, self);
+
+                self.TituloRecargo = ko.computed(function () {
+                    var mensaje = "";
+
+                    if (self.RecargoNoHabilConOperador() > 0)
+                        mensaje = "Recargo No habil con operador: $" + self.RecargoNoHabilConOperador();
+                    if (self.RecargoNoHabilSinOperador() > 0)
+                        mensaje = "Recargo No habil sin operador: $" + self.RecargoNoHabilSinOperador();
+
+                    return mensaje;
+                }, self);
+
                 self.TotalFinal = ko.computed(function () {
-                    return self.TotalPedido() + self.IVA() - self.Descuento();
+                    return self.TotalPedido() + self.IVA() + self.Recargo() - self.Descuento();
                 }, self);
 
                 self.EnviarPedido = function () {
+                    $("#btnEnviar").attr('disabled', 'disabled');
+                    $.blockUI({ overlayCSS: { backgroundColor: '#00f' }, message: '<h1>Aguarde un momento por favor...</h1>' });
+
                     $.ajax({
                         url: '@Url.Action("Create", "Pedido")',
                         data: ko.toJSON(viewModel),
@@ -914,7 +1006,7 @@
                         contentType: 'application/json; charset=utf-8'
                     }).done(function (data) {
                         $("#AlertMensaje").show();
-                        $("#AlertFecha").text = moment(data.FechaHora());
+                        $("#AlertFecha").text = moment(data.fechaHora);
                         if (data.envioCorrecto) {
                             $("#AlertTitle").text = "Éxito!";
                             $("#AlertTitle").addClass("text-success");
@@ -928,6 +1020,9 @@
                             $("#AlertBody").addClass("text-danger");
                         }
                     });
+
+                    $("#btnEnviar").removeAttr('disabled');
+                    $.unblockUI();
                 }
 
                 //Carga si vienen datos

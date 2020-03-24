@@ -43,6 +43,7 @@ namespace Castano.Web
 
             // TODO: Register your type's mappings here.
             container.RegisterType<IEnvioMailService, EnvioMailService>();
+            container.RegisterType<IPedidoService, PedidoService>();
         }
     }
 }

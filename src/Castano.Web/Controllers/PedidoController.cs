@@ -12,9 +12,11 @@
     public class PedidoController : Controller
     {
         private readonly IEnvioMailService _envioMailService;
-        public PedidoController(IEnvioMailService envioMailService)
+        private readonly IPedidoService _pedidoService;
+        public PedidoController(IEnvioMailService envioMailService, IPedidoService pedidoService)
         {
             this._envioMailService = envioMailService;
+            this._pedidoService = pedidoService;
         }
 
         // GET: Pedido/Login
@@ -60,28 +62,72 @@
                 FechaHora = DateTime.Now.ToString("dd/MM/yyyy HH:mm")
             };
 
+            this._pedidoService.LlenarConEquipos(pedido);
+
             return View(pedido);
         }
 
         [HttpPost]
-        public async Task<JsonResult> Create(Data.Pedido pedido)
+        public async Task<JsonResult> Create(ModelPedidoWeb pedidoWeb)
         {
-            if (pedido.IsValid())
+            var pathEmail = Server.MapPath("~/Views/EmailTemplate/MailPedido.html");
+            var pedidoParaEnviar = new Data.Pedido
+            {
+                FechaHora = pedidoWeb.FechaHora,
+                Cliente = pedidoWeb.Cliente,
+                Salon = pedidoWeb.Salon,
+                Prueba = pedidoWeb.Prueba,
+                Inicio = pedidoWeb.Inicio,
+                Finalizacion = pedidoWeb.Finalizacion,
+                Equipos = pedidoWeb.EquiposRequeridos
+            };
+
+            //Elementos auxiliares
+            var descuento = pedidoWeb.Descuento;
+            var recargo = pedidoWeb.Recargo;
+
+            if (pedidoParaEnviar.IsValid())
             {
                 try
                 {
-                    await _envioMailService.SendMail(pedido);
+                    await _envioMailService.SendMail(pedidoParaEnviar, descuento, recargo, pathEmail);
                     
-                    return new JsonResult { Data = new { envioCorrecto = true, msg = "Su pedido se envió éxitosamente. Estaremos comunicándonos con usted a la brevedad." }, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-
+                    return new JsonResult 
+                    { 
+                        Data = new 
+                        { 
+                            fechaHora = DateTime.Now.ToString("dd/MM/yyyy HH:mm"), 
+                            envioCorrecto = true, 
+                            msg = "Su pedido se envió éxitosamente. Estaremos comunicándonos con usted a la brevedad." 
+                        }, 
+                        JsonRequestBehavior = JsonRequestBehavior.AllowGet 
+                    };
                 }
                 catch (System.Exception exc)
                 {
-                    return new JsonResult { Data = new { envioCorrecto = false, msg = $"Su pedido no ha podido enviarse. Se ha producido un error. {exc.Message}" }, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+                    return new JsonResult 
+                    { 
+                        Data = new 
+                        { 
+                            fechaHora = DateTime.Now.ToString("dd/MM/yyyy HH:mm"), 
+                            envioCorrecto = false, 
+                            msg = $"Su pedido no ha podido enviarse. Se ha producido un error. {exc.Message}" 
+                        }, 
+                        JsonRequestBehavior = JsonRequestBehavior.AllowGet 
+                    };
                 }
             }
 
-            return new JsonResult { Data = new { envioCorrecto = false, msg = "Su pedido no ha podido enviarse. El formulario que está intentando enviar no es válido, por favor corrija y vuelva a intentarlo." }, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult 
+            { 
+                Data = new 
+                { 
+                    fechaHora = DateTime.Now.ToString("dd/MM/yyyy HH:mm"), 
+                    envioCorrecto = false, 
+                    msg = "Su pedido no ha podido enviarse. El formulario que está intentando enviar no es válido, por favor corrija y vuelva a intentarlo." 
+                }, 
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet 
+            };
         }
     }
 }
