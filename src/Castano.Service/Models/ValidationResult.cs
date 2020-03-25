@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+    using System.Text;
 
     public class ValidationResult
     {
@@ -15,6 +16,18 @@
         public void AddError(string error)
         {
             this.Errores.Add(error);
+        }
+
+        public string MensajeErrores
+        {
+            get
+            {
+                var stringBuilder = new StringBuilder();
+
+                Errores.ForEach(e => stringBuilder.AppendLine(e));
+
+                return stringBuilder.ToString();
+            }
         }
     }
 }

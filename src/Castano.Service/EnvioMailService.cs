@@ -10,45 +10,49 @@
     using System.Threading.Tasks;
     public interface IEnvioMailService
     {
-        Task<ValidationResult> SendMail(Data.Pedido pedido, double descuento, double recargo, string pathEmail);
+        ValidationResult SendMail(Data.Pedido pedido, double descuento, double recargo, string pathEmail);
     }
 
     public class EnvioMailService : IEnvioMailService
     {
-        public async Task<ValidationResult> SendMail(Data.Pedido pedido, double descuento, double recargo, string pathEmail)
+        public ValidationResult SendMail(Data.Pedido pedido, double descuento, double recargo, string pathEmail)
         {
             var result = new ValidationResult();
 
-            using (SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587))
+            var fromAddress = new MailAddress("cast.rosarioav@gmail.com");
+            var fromPassword = "BSAS24580715";
+            var toAddress = new MailAddress("casasmanuj@gmail.com");
+
+            string subject = $"Nuevo Pedido -> {pedido.Cliente} para el día {pedido.Inicio.Value.ToShortDateString()} a las {pedido.Inicio.Value.ToShortTimeString()}";
+            string body = this.CreateEmailBodyFromTemplate(pedido, descuento, recargo, pathEmail);
+
+            SmtpClient smtp = new SmtpClient
             {
-                var basicCredential = new NetworkCredential("cast.rosarioav@gmail.com", "BSAS2458");
-                using (MailMessage message = new MailMessage())
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+            };
+
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = subject,
+                IsBodyHtml = true,
+                Body = body
+            })
+
+                try
                 {
-                    MailAddress fromAddress = new MailAddress("cast.rosarioav@gmail.com");
-                    smtpClient.EnableSsl = true;
-                    smtpClient.UseDefaultCredentials = false;
-                    smtpClient.Credentials = basicCredential;
-
-                    message.From = fromAddress;
-                    message.Subject = $"Nuevo Pedido -> {pedido.Cliente} para el día {pedido.Inicio.Value.ToShortDateString()} a las {pedido.Inicio.Value.ToShortTimeString()}";
-                    // Set IsBodyHtml to true means you can send HTML email.
-                    message.IsBodyHtml = true;
-                    message.Body = this.CreateEmailBodyFromTemplate(pedido, descuento, recargo, pathEmail);
-
-                    message.To.Add("casasmanuj@gmail.com");
-
-                    try
-                    {
-                        await smtpClient.SendMailAsync(message);
-                    }
-                    catch (Exception ex)
-                    {
-                        result.AddError(ex.Message);
-                    }
-
-                    return result;
+                    smtp.Send(message);
                 }
-            }
+                catch (Exception ex)
+                {
+                    result.AddError(ex.Message);
+                }
+
+            return result;
         }
 
         public string CreateEmailBodyFromTemplate(Data.Pedido pedido, double descuento, double recargo, string pathEmail)

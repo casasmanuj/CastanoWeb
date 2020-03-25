@@ -17,6 +17,14 @@
     </div>
     <section>
         <div class="jumbotron">
+            <!--Alerts-->
+            <div class="alert alert-dismissible fade show" role="alert" id="AlertMensaje" hidden>
+                <strong id="AlertTitle"></strong> <span id="AlertBody"></span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
             <h3 data-bind="text: Cliente" class="section-heading text-primary"></h3>
             <h3 data-bind="text: FechaHora" class="section-heading text-primary"></h3>
             <div class="col-lg-11 mx-auto text-center" id="formPedido">
@@ -503,7 +511,7 @@
                                             <div class="table-responsive">
                                                 <table class="table table-bordered">
                                                     <tbody>
-                                                        <tr data-bind="css: { 'text-muted': CantidadDias() != 2 }">
+                                                        <tr data-bind="css: { 'text-success': CantidadDias() == 2 }">
                                                             <td>
                                                                 <h5>
                                                                     <span>Por 2 Días consecutivos</span>
@@ -515,7 +523,7 @@
                                                                 </h5>
                                                             </td>
                                                         </tr>
-                                                        <tr data-bind="css: { 'text-muted': CantidadDias() != 3 }">
+                                                        <tr data-bind="css: { 'text-success': CantidadDias() == 3 }">
                                                             <td>
                                                                 <h5>
                                                                     <span>Por 3 Días consecutivos</span>
@@ -527,7 +535,7 @@
                                                                 </h5>
                                                             </td>
                                                         </tr>
-                                                        <tr data-bind="css: { 'text-muted': CantidadDias() != 4 }">
+                                                        <tr data-bind="css: { 'text-success': CantidadDias() == 4 }">
                                                             <td>
                                                                 <h5>
                                                                     <span>Por 4 Días consecutivos</span>
@@ -539,7 +547,7 @@
                                                                 </h5>
                                                             </td>
                                                         </tr>
-                                                        <tr data-bind="css: { 'text-muted': CantidadDias() < 5 }">
+                                                        <tr data-bind="css: { 'text-success': CantidadDias() >= 5 }">
                                                             <td>
                                                                 <h5>
                                                                     <span>Por 5 Días consecutivos</span>
@@ -571,7 +579,7 @@
                                             <div class="table-responsive">
                                                 <table class="table table-bordered">
                                                     <tbody>
-                                                        <tr data-bind="css: { 'text-muted': RecargoNoHabilConOperador() == 0 }">
+                                                        <tr data-bind="css: { 'text-danger': RecargoNoHabilConOperador() > 0 }">
                                                             <td>
                                                                 <h5>
                                                                     <span>RECARGO DIAS NO HABILES / SERVICIOS CON OPERADOR</span>
@@ -587,7 +595,7 @@
                                                                 </h5>
                                                             </td>
                                                         </tr>
-                                                        <tr data-bind="css: { 'text-muted': RecargoNoHabilSinOperador() == 0 }">
+                                                        <tr data-bind="css: { 'text-danger': RecargoNoHabilSinOperador() > 0 }">
                                                             <td>
                                                                 <h5>
                                                                     <span>RECARGO DIAS NO HABILES / SERVICIOS SIN OPERADOR</span>
@@ -712,19 +720,7 @@
         </div>
     </section>
 </div>
-<!--Alerts-->
-<div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;" id="AlertMensaje" hidden="hidden">
-    <div class="toast" style="position: absolute; top: 0; right: 0;">
-        <div class="toast-header">
-            <strong class="mr-auto" id="AlertTitle"></strong>
-            <small id="AlertFecha"></small>
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="toast-body" id="AlertBody"></div>
-    </div>
-</div>
+
 
 @section scripts{
     @Scripts.Render("~/bundles/bootstrap-validator")
@@ -997,7 +993,7 @@
 
                 self.EnviarPedido = function () {
                     $("#btnEnviar").attr('disabled', 'disabled');
-                    $.blockUI({ overlayCSS: { backgroundColor: '#00f' }, message: '<h1>Aguarde un momento por favor...</h1>' });
+                    $.blockUI({ message: '<h3>Aguarde un momento por favor...</h3>' });
 
                     $.ajax({
                         url: '@Url.Action("Create", "Pedido")',
@@ -1005,24 +1001,25 @@
                         type: 'POST',
                         contentType: 'application/json; charset=utf-8'
                     }).done(function (data) {
-                        $("#AlertMensaje").show();
-                        $("#AlertFecha").text = moment(data.fechaHora);
+                        window.scrollTo(0, 0);
+                        $("#AlertMensaje").removeAttr('hidden');
+
                         if (data.envioCorrecto) {
-                            $("#AlertTitle").text = "Éxito!";
-                            $("#AlertTitle").addClass("text-success");
-                            $("#AlertBody").text = "Su pedido se pudo enviar correctamente!";
-                            $("#AlertBody").addClass("text-success");
+                            $("#AlertMensaje").addClass("alert-success");
+                            $("#AlertTitle").text("Éxito!");
+                            $("#AlertBody").text("Su pedido se pudo enviar correctamente!");
                         }
                         else {
-                            $("#AlertMensajeTitle").text = "Error!";
-                            $("#AlertTitle").addClass("text-danger");
-                            $("#AlertBody").text = data.msg;
-                            $("#AlertBody").addClass("text-danger");
+                            $("#AlertMensaje").addClass("alert-danger");
+                            $("#AlertTitle").text("Error!");
+                            $("#AlertBody").text(data.msg);
                         }
                     });
 
-                    $("#btnEnviar").removeAttr('disabled');
-                    $.unblockUI();
+                    setTimeout(function () {
+                        $("#btnEnviar").removeAttr('disabled');
+                        $.unblockUI();
+                    }, 5000);
                 }
 
                 //Carga si vienen datos

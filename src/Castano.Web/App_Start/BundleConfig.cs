@@ -15,11 +15,8 @@ namespace Castano.Web
                 "~/Content/bootstrap.datetime/bootstrap.datetime.css",
                 "~/Content/jquery.smartWizard/jquery.smartWizard.css",
                 "~/Content/jquery.smartWizard/smart_wizard_theme_arrows.css",
-                "~/Content/jquery.smartWizard/smart_wizard_theme_circles.css",
-                "~/Content/jquery.smartWizard/smart_wizard_theme_dots.css",
-                "~/Content/creative/creative.css",
-                "~/Content/Site.css"
-                ));
+                "~/Content/creative/creative.min.css",
+                "~/Content/Site.css"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
@@ -55,7 +52,7 @@ namespace Castano.Web
 
             bundles.Add(new ScriptBundle("~/bundles/jquery-blockUI").Include(
                         "~/Scripts/jquery.blockUI/jquery.blockUI.js"));
-            
+
             bundles.Add(new ScriptBundle("~/bundles/jquery-smartwizard").Include(
                         "~/Scripts/jquery.smartwizard/jquery.smartwizard.js"));
 

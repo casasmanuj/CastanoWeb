@@ -68,7 +68,7 @@
         }
 
         [HttpPost]
-        public async Task<JsonResult> Create(ModelPedidoWeb pedidoWeb)
+        public JsonResult Create(ModelPedidoWeb pedidoWeb)
         {
             var pathEmail = Server.MapPath("~/Views/EmailTemplate/MailPedido.html");
             var pedidoParaEnviar = new Data.Pedido
@@ -90,17 +90,31 @@
             {
                 try
                 {
-                    await _envioMailService.SendMail(pedidoParaEnviar, descuento, recargo, pathEmail);
-                    
-                    return new JsonResult 
-                    { 
-                        Data = new 
-                        { 
-                            fechaHora = DateTime.Now.ToString("dd/MM/yyyy HH:mm"), 
-                            envioCorrecto = true, 
-                            msg = "Su pedido se envió éxitosamente. Estaremos comunicándonos con usted a la brevedad." 
-                        }, 
-                        JsonRequestBehavior = JsonRequestBehavior.AllowGet 
+                    var result = _envioMailService.SendMail(pedidoParaEnviar, descuento, recargo, pathEmail);
+
+                    if (result.IsValid)
+                    {
+                        return new JsonResult
+                        {
+                            Data = new
+                            {
+                                fechaHora = DateTime.Now.ToString("dd/MM/yyyy HH:mm"),
+                                envioCorrecto = true,
+                                msg = "Su pedido se envió éxitosamente. Estaremos comunicándonos con usted a la brevedad."
+                            },
+                            JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                        };
+                    }
+
+                    return new JsonResult
+                    {
+                        Data = new
+                        {
+                            fechaHora = DateTime.Now.ToString("dd/MM/yyyy HH:mm"),
+                            envioCorrecto = false,
+                            msg = $"Su pedido no ha podido enviarse. Se ha producido un error. {result.MensajeErrores}"
+                        },
+                        JsonRequestBehavior = JsonRequestBehavior.AllowGet
                     };
                 }
                 catch (System.Exception exc)
