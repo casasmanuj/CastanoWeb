@@ -79,7 +79,8 @@
                 Prueba = pedidoWeb.Prueba,
                 Inicio = pedidoWeb.Inicio,
                 Finalizacion = pedidoWeb.Finalizacion,
-                Equipos = pedidoWeb.EquiposRequeridos
+                Equipos = pedidoWeb.EquiposRequeridos,
+                Observaciones = pedidoWeb.Observaciones
             };
 
             //Elementos auxiliares

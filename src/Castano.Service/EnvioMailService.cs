@@ -31,7 +31,7 @@
                 Host = "smtp.gmail.com",
                 Port = 587,
                 EnableSsl = true,
-                DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
                 Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
             };
@@ -62,16 +62,16 @@
             {
                 body = reader.ReadToEnd();
             }
-
+            var cantidadDias = (pedido.Finalizacion.Value - pedido.Inicio.Value).Days;
             body = body.Replace("{FechaHora}", pedido.FechaHora);
 
             body = body.Replace("{Cliente}", pedido.Cliente);
             body = body.Replace("{Salon}", pedido.Salon);
 
-            body = body.Replace("{Prueba}", pedido.Prueba.Value.ToShortDateString());
-            body = body.Replace("{Inicio}", pedido.Inicio.Value.ToShortDateString());
-            body = body.Replace("{Finalizacion}", pedido.Finalizacion.Value.ToShortDateString());
-            body = body.Replace("{CantidadDias}", ((pedido.Finalizacion.Value - pedido.Inicio.Value).Days).ToString());
+            body = body.Replace("{Prueba}", pedido.Prueba.Value.ToString("dd/MM/yyyy HH:mm"));
+            body = body.Replace("{Inicio}", pedido.Inicio.Value.ToString("dd/MM/yyyy HH:mm"));
+            body = body.Replace("{Finalizacion}", pedido.Finalizacion.Value.ToString("dd/MM/yyyy HH:mm"));
+            body = body.Replace("{CantidadDias}", cantidadDias.ToString());
 
             StringBuilder tagEquipos = new StringBuilder();
             foreach (var equipo in pedido.Equipos)
@@ -88,7 +88,7 @@
 
             body = body.Replace("{Equipos}", tagEquipos.ToString());
 
-            var totalEquipos = pedido.Equipos.Sum(e => e.TotalEquipo);
+            var totalEquipos = pedido.Equipos.Sum(e => e.TotalEquipo) * cantidadDias;
             var iva = Math.Round((totalEquipos * 0.21), 2);
             var totalFinal = totalEquipos + iva - descuento + recargo;
             body = body.Replace("{TotalEquipos}", totalEquipos.ToString("n0"));

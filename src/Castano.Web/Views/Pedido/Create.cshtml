@@ -914,7 +914,8 @@
                     var fin = moment(self.Finalizacion(), 'DD/MM/YYYY HH:mm');
 
                     if (self.PedidoConOperador()) {
-                        for (var i = inicio; i.isSameOrBefore(fin); i = i.add(1, 'days')) {
+                        var diaInicioALasCeroHoras = moment(inicio.date() + "/" + (inicio.month() + 1) + "/" + inicio.year() + " 00:00", 'D/M/YYYY HH:mm');
+                        for (var i = diaInicioALasCeroHoras; i.isSameOrBefore(fin); i = i.add(1, 'days')) {
                             //Control feriado y Domingo
                             if (moment(i.format('dd-MM-yyyy')).isHoliday() || i.day() == 0) {
                                 recargoNoHabilConOperador = recargoNoHabilConOperador + 1560;
@@ -922,14 +923,8 @@
 
                             //Sabado
                             if (i.day() == 6) {
-                                if (i.hour() <= 12) {
-                                    var horasParaMediodia = 12 - i.hour();
-                                    var diaAux = i.add(horasParaMediodia, 'hours');
-                                    if (diaAux.isBefore(fin)) {
-                                        recargoNoHabilConOperador = recargoNoHabilConOperador + 1560;
-                                    }
-                                }
-                                else {
+                                var diaAux = i.add(12, 'hours');
+                                if (diaAux.isSameOrAfter(inicio) && diaAux.isSameOrBefore(fin)) {
                                     recargoNoHabilConOperador = recargoNoHabilConOperador + 1560;
                                 }
                             }
@@ -948,7 +943,8 @@
                     var fin = moment(self.Finalizacion(), 'DD/MM/YYYY HH:mm');
 
                     if (!self.PedidoConOperador()) {
-                        for (var i = inicio; i.isSameOrBefore(fin); i = i.add(1, 'days')) {
+                        var diaInicioALasCeroHoras = moment(inicio.date() + "/" + (inicio.month() + 1) + "/" + inicio.year() + " 00:00", 'D/M/YYYY HH:mm');
+                        for (var i = diaInicioALasCeroHoras; i.isSameOrBefore(fin); i = i.add(1, 'days')) {
                             //Control feriado y Domingo
                             if (moment(i.format('dd-MM-yyyy')).isHoliday() || i.day() == 0) {
                                 recargoNoHabilSinOperador = recargoNoHabilSinOperador + 780;
@@ -956,14 +952,8 @@
 
                             //Sabado
                             if (i.day() == 6) {
-                                if (i.hour() <= 12) {
-                                    var horasParaMediodia = 12 - i.hour();
-                                    var diaAux = i.add(horasParaMediodia, 'hours');
-                                    if (diaAux.isBefore(fin)) {
-                                        recargoNoHabilSinOperador = recargoNoHabilSinOperador + 780;
-                                    }
-                                }
-                                else {
+                                var diaAux = i.add(12, 'hours');
+                                if (diaAux.isSameOrAfter(inicio) && diaAux.isSameOrBefore(fin)) {
                                     recargoNoHabilSinOperador = recargoNoHabilSinOperador + 780;
                                 }
                             }
