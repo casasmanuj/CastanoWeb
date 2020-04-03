@@ -30,47 +30,10 @@
             this._userManager = appUserManager;
         }
 
-        // GET: Pedido/Login
-        [AllowAnonymous]
-        public ActionResult Login()
+        // GET: Pedido/
+        public ActionResult Index()
         {
-            return View();
-        }
-
-        // POST: Pedido/Login
-        [AllowAnonymous]
-        [HttpPost]
-        public async Task<ActionResult> Login(Login login)
-        {
-            var secret = "6LfBQOIUAAAAAODnw5bhLcW7QO3nvL9EuZ5S27qC";
-            var g_captcha = this.Request.Form["g-recaptcha-response"];
-
-            var response = new WebClient().DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secret, g_captcha));
-            var recaptchaResponse = JsonConvert.DeserializeObject<RecaptchaResponse>(response);
-
-            if (recaptchaResponse.Success)
-            {
-                var user = await _userManager.FindAsync(login.UserName, login.Password);
-
-                if (user != null)
-                {
-                    AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-                    var identity = await _userManager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
-                    AuthenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = true }, identity);
-
-                    return RedirectToAction("Create", new { cliente = login.UserName});
-                }
-            }
-
-            ViewBag.Error = "Usuario o contraseña incorrectos.";
-            return View(login);
-        }
-
-        // GET: /Pedido/LogOff
-        public ActionResult LogOff()
-        {
-            AuthenticationManager.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Create");
         }
 
         // GET: Pedido/Create
@@ -167,6 +130,48 @@
             };
         }
 
+        // GET: Pedido/Login
+        [AllowAnonymous]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        // POST: Pedido/Login
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task<ActionResult> Login(Login login)
+        {
+            var secret = "6LfBQOIUAAAAAODnw5bhLcW7QO3nvL9EuZ5S27qC";
+            var g_captcha = this.Request.Form["g-recaptcha-response"];
+
+            var response = new WebClient().DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secret, g_captcha));
+            var recaptchaResponse = JsonConvert.DeserializeObject<RecaptchaResponse>(response);
+
+            if (recaptchaResponse.Success)
+            {
+                var user = await _userManager.FindAsync(login.UserName, login.Password);
+
+                if (user != null)
+                {
+                    AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+                    var identity = await _userManager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
+                    AuthenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = true }, identity);
+
+                    return RedirectToAction("Create", new { cliente = login.UserName });
+                }
+            }
+
+            ViewBag.Error = "Usuario o contraseña incorrectos.";
+            return View(login);
+        }
+
+        // GET: /Pedido/LogOff
+        public ActionResult LogOff()
+        {
+            AuthenticationManager.SignOut();
+            return RedirectToAction("Index", "Home");
+        }
 
         private IAuthenticationManager AuthenticationManager
         {
