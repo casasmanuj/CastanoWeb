@@ -1,7 +1,7 @@
-﻿@model Castano.Data.Pedido
+﻿@model Castano.Data.Pedido.Pedido
 
 @{
-    ViewBag.Title = "Pedido Cástano y Asociados";
+    ViewBag.Title = "Pedido CASTANO & asociados";
 }
 
 <div class="body">
@@ -13,6 +13,9 @@
                     <img alt="castano&asociados" src="~/img/logo.jpg" style="max-width: 250px" />
                 </a>
             </div>
+            <a class="btn btn-link float-right" href="@Url.Action("LogOff")">
+                <i class="fas fa-sign-out-alt"></i> Log Off
+            </a>
         </nav>
     </div>
     <section>
@@ -728,7 +731,6 @@
     @Scripts.Render("~/bundles/jquery-blockUI")
     @Scripts.Render("~/bundles/jquery-smartwizard")
     @Scripts.Render("~/bundles/moment-holiday")
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <script type="text/javascript">
         $(document).ready(function () {

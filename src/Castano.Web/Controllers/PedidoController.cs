@@ -1,33 +1,46 @@
 ﻿namespace Castano.Web.Controllers
 {
+    using Castano.Data;
+    using Castano.Data.Pedido;
+    using Castano.Data.Identity;
     using Castano.Service;
     using Castano.Web.Models;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Microsoft.Owin.Security;
     using Newtonsoft.Json;
     using System;
+    using System.Linq;
     using System.Net;
-    using System.Threading.Tasks;
+    using System.Web;
     using System.Web.Mvc;
+    using System.Threading.Tasks;
 
-    [AllowAnonymous]
+    [Authorize]
     public class PedidoController : Controller
     {
         private readonly IEnvioMailService _envioMailService;
-        private readonly IPedidoService _pedidoService;
-        public PedidoController(IEnvioMailService envioMailService, IPedidoService pedidoService)
+        private readonly ICastanoData _data;
+        private readonly AppUserManager _userManager;
+
+        public PedidoController(IEnvioMailService envioMailService, ICastanoData data, AppUserManager appUserManager)
         {
             this._envioMailService = envioMailService;
-            this._pedidoService = pedidoService;
+            this._data = data;
+            this._userManager = appUserManager;
         }
 
         // GET: Pedido/Login
+        [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
         }
 
         // POST: Pedido/Login
+        [AllowAnonymous]
         [HttpPost]
-        public ActionResult Login(Login login)
+        public async Task<ActionResult> Login(Login login)
         {
             var secret = "6LfBQOIUAAAAAODnw5bhLcW7QO3nvL9EuZ5S27qC";
             var g_captcha = this.Request.Form["g-recaptcha-response"];
@@ -37,32 +50,41 @@
 
             if (recaptchaResponse.Success)
             {
-                switch (login.UserName)
-                {
-                    case "info":
-                        if (login.Password == "info123")
-                            return RedirectToAction("Create");
-                        break;
+                var user = await _userManager.FindAsync(login.UserName, login.Password);
 
-                    default:
-                        break;
+                if (user != null)
+                {
+                    AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+                    var identity = await _userManager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
+                    AuthenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = true }, identity);
+
+                    return RedirectToAction("Create", new { cliente = login.UserName});
                 }
             }
 
             ViewBag.Error = "Usuario o contraseña incorrectos.";
-            return View();
+            return View(login);
+        }
+
+        // GET: /Pedido/LogOff
+        public ActionResult LogOff()
+        {
+            AuthenticationManager.SignOut();
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: Pedido/Create
-        public ActionResult Create(string cliente)
+        public ActionResult Create()
         {
-            var pedido = new Data.Pedido
+            if (User == null || User.Identity == null) return RedirectToAction("Login");
+
+            var pedido = new Pedido
             {
-                Cliente = cliente ?? "Cliente Prueba",
+                Cliente = User.Identity.Name,
                 FechaHora = DateTime.Now.ToString("dd/MM/yyyy HH:mm")
             };
 
-            this._pedidoService.LlenarConEquipos(pedido);
+            pedido.Equipos = _data.EquiposRepository.All.ToList();
 
             return View(pedido);
         }
@@ -71,7 +93,7 @@
         public JsonResult Create(ModelPedidoWeb pedidoWeb)
         {
             var pathEmail = Server.MapPath("~/Views/EmailTemplate/MailPedido.html");
-            var pedidoParaEnviar = new Data.Pedido
+            var pedidoParaEnviar = new Pedido
             {
                 FechaHora = pedidoWeb.FechaHora,
                 Cliente = pedidoWeb.Cliente,
@@ -144,5 +166,15 @@
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet 
             };
         }
+
+
+        private IAuthenticationManager AuthenticationManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Authentication;
+            }
+        }
+
     }
 }

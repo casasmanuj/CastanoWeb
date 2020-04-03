@@ -1,5 +1,6 @@
 ﻿namespace Castano.Service
 {
+    using Castano.Data.Pedido;
     using Castano.Service.Models;
     using System;
     using System.IO;
@@ -7,15 +8,15 @@
     using System.Net;
     using System.Net.Mail;
     using System.Text;
-    using System.Threading.Tasks;
+
     public interface IEnvioMailService
     {
-        ValidationResult SendMail(Data.Pedido pedido, double descuento, double recargo, string pathEmail);
+        ValidationResult SendMail(Pedido pedido, double descuento, double recargo, string pathEmail);
     }
 
     public class EnvioMailService : IEnvioMailService
     {
-        public ValidationResult SendMail(Data.Pedido pedido, double descuento, double recargo, string pathEmail)
+        public ValidationResult SendMail(Pedido pedido, double descuento, double recargo, string pathEmail)
         {
             var result = new ValidationResult();
 
@@ -55,7 +56,7 @@
             return result;
         }
 
-        public string CreateEmailBodyFromTemplate(Data.Pedido pedido, double descuento, double recargo, string pathEmail)
+        public string CreateEmailBodyFromTemplate(Pedido pedido, double descuento, double recargo, string pathEmail)
         {
             string body = string.Empty;
             using (StreamReader reader = new StreamReader(pathEmail))

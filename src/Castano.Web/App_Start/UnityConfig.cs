@@ -1,10 +1,10 @@
-using Castano.Service;
-using System;
-
-using Unity;
-
 namespace Castano.Web
 {
+    using Castano.Data;
+    using Castano.Service;
+    using System;
+    using Unity;
+
     /// <summary>
     /// Specifies the Unity configuration for the main container.
     /// </summary>
@@ -42,8 +42,11 @@ namespace Castano.Web
             //container.LoadConfiguration();
 
             // TODO: Register your type's mappings here.
-            container.RegisterType<IEnvioMailService, EnvioMailService>();
-            container.RegisterType<IPedidoService, PedidoService>();
+            container
+                //.RegisterType<IDbContext, OracleDataContext>(new PerRequestLifetimeManager(), new InjectionConstructor("OracleData"))
+                //.RegisterType<IData, OracleData>(new InjectionConstructor(new ResolvedParameter<CastanoContext>()))
+                .RegisterType<IEnvioMailService, EnvioMailService>()
+                .RegisterType<ICastanoData, CastanoData>();
         }
     }
 }

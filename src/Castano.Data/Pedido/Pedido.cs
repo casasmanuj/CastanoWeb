@@ -1,18 +1,25 @@
-﻿namespace Castano.Data
+﻿namespace Castano.Data.Pedido
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Linq;
 
     public class Pedido
     {
+        [Required]
         public string Cliente { get; set; }
+        [Required]
         public string Salon { get; set; }
         public string Observaciones { get; set; }
 
         public string FechaHora { get; set; }
+
+        [Required]
         public DateTime? Prueba { get; set; }
+        [Required]
         public DateTime? Inicio { get; set; }
+        [Required]
         public DateTime? Finalizacion { get; set; }
 
         public List<Equipo> Equipos { get; set; }
@@ -21,19 +28,5 @@
         {
             return this.Prueba.HasValue && this.Inicio.HasValue && this.Finalizacion.HasValue && this.Equipos.Any(e => e.Cantidad > 0);
         }
-    }
-
-    public class Equipo
-    {
-        public bool SoloConAnticipacion { get; set; }
-        public bool? ConOperador { get; set; }
-        public int Cantidad { get; set; }
-        public string Nombre { get; set; }
-        public string Descripcion { get; set; }
-        public string IndicadoPara { get; set; }
-        public string Aclaracion { get; set; }
-        public double Precio { get; set; }
-        public string Tipo { get; set; }
-        public double TotalEquipo => Cantidad * Precio;
     }
 }

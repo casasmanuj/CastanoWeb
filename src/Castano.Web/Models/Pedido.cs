@@ -1,9 +1,8 @@
 ﻿namespace Castano.Web.Models
 {
+    using Castano.Data.Pedido;
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
 
     public class ModelPedidoWeb
     {
@@ -21,6 +20,6 @@
         public double Recargo { get; set; }
         public double TotalFinal { get; set; }
 
-        public List<Data.Equipo> EquiposRequeridos { get; set; }
+        public List<Equipo> EquiposRequeridos { get; set; }
     }
 }
