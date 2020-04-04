@@ -15,9 +15,18 @@
     </div>
     <section>
         <div class="jumbotron">
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-dismissible fade show alert-danger" role="alert" id="AlertMensaje">
+                    <strong id="AlertTitle">Error!</strong> @ViewBag.Error
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            }
             <div class="container mt-5 mb-5">
                 <div class="well no-padding">
-                    @using (Html.BeginForm("Login", "Pedido", null, FormMethod.Post, new { id = "LoginForm", @class= "animated fadeInDown" }))
+                    @using (Html.BeginForm("Login", "Pedido", null, FormMethod.Post, new { id = "LoginForm", @class = "animated fadeInDown" }))
                     {
                         @Html.AntiForgeryToken()
                         <div class="form-group">
@@ -55,14 +64,13 @@
 </div>
 
 @section Scripts {
+    @Scripts.Render("~/bundles/bootstrap-validator")
     @Scripts.Render("~/bundles/jquery-blockUI")
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#LoginForm").submit(function () {
-                if ($("#LoginForm").valid()) {
-                    $.blockUI();
-                }
+                $.blockUI({ message: '<h3>Aguarde un momento por favor...</h3>' });
             });
         });
     </script>
