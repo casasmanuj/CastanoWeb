@@ -33,14 +33,13 @@
         // GET: Pedido/
         public ActionResult Index()
         {
+            if (!User.Identity.IsAuthenticated) return RedirectToAction("Login");
             return RedirectToAction("Create");
         }
 
         // GET: Pedido/Create
         public ActionResult Create()
         {
-            if (User == null || User.Identity == null) return RedirectToAction("Login");
-
             var pedido = new Pedido
             {
                 Cliente = User.Identity.Name,
