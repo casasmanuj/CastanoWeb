@@ -15,6 +15,16 @@
     @Scripts.Render("~/bundles/bootstrap")
 
     @RenderSection("content", required: false)
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163609936-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-163609936-1');
+    </script>
 </head>
 
 <body id="page-top">
@@ -39,12 +49,12 @@
                 </div>
                 <div class="col-lg-2 text-primary">
                     <i class="fas fa-phone fa-3x mb-3 sr-icon-2"></i>
-                    <p>&nbsp;(0341)485-4531</p>
+                    <p>&nbsp;(0341)155-505917</p>
                 </div>
                 <div class="col-lg-2 text-primary">
                     <i class="fas fa-envelope fa-3x mb-3 sr-icon-3"></i>
                     <p>
-                        &nbsp;<a href="mailto:info@castanoyasociados.com.ar">info@castanoyasociados</a>
+                        &nbsp;<a href="mailto:info@castanoyasociados.com.ar?subject=Contacto%20CastanoWeb&body=Hola!%20Me%20contacto%20para%20hacer%20la%20siguiente%20consulta%20...">info@castanoyasociados.com.ar</a>
                     </p>
                 </div>
             </div>
@@ -58,7 +68,7 @@
                 <div class="col-lg-6 mr-auto text-right">
                     <small>
                         Diseño y desarrollo:
-                        <a href="mailto:casasmanuj@gmail.com.ar">
+                        <a href="mailto:casasmanuj@gmail.com.ar?subject=Contacto%20CastanoWeb">
                             Manuel J. Casas
                         </a>
                     </small>

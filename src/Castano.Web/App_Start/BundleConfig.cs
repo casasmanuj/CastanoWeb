@@ -68,6 +68,42 @@ namespace Castano.Web
 
             bundles.Add(new ScriptBundle("~/bundles/creative").Include(
                         "~/Scripts/creative/creative.js"));
+
+
+            bundles.Add(new StyleBundle("~/Content/datatablesBs4", "//cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css").Include(
+                "~/Content/datatables/datatablesBs4.css"));
+            bundles.Add(new StyleBundle("~/Content/datatablesButtonsBs4", "//cdn.datatables.net/buttons/1.6.1/css/buttons.bootstrap4.min.css").Include(
+                "~/Content/datatables/datatablesButtonsBs4.css"));
+            bundles.Add(new StyleBundle("~/Content/datatablesResponsiveBs4", "//cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css").Include(
+                "~/Content/datatables/datatablesResponsiveBs4.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/datatables", "//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js").Include(
+                "~/Scripts/datatables/datatables.js"
+            ));
+            bundles.Add(new ScriptBundle("~/bundles/datatablesBs4", "//cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js").Include(
+                "~/Scripts/datatables/datatablesBs4.js"
+            ));
+            bundles.Add(new ScriptBundle("~/bundles/datatablesButtons", "//cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js").Include(
+                "~/Scripts/datatables/datatablesButtons.js"
+            ));
+            bundles.Add(new ScriptBundle("~/bundles/datatablesButtonsBs4", "//cdn.datatables.net/buttons/1.6.1/js/buttons.bootstrap4.min.js").Include(
+                "~/Scripts/datatables/datatablesButtonsBs4.js"
+            ));
+            bundles.Add(new ScriptBundle("~/bundles/jszip", "//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js").Include(
+                "~/Scripts/datatables/jszip.js"
+            ));
+            bundles.Add(new ScriptBundle("~/bundles/datatablesButtonsHtml5", "//cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js").Include(
+                "~/Scripts/datatables/datatablesButtonsHtml5.js"
+            ));
+            bundles.Add(new ScriptBundle("~/bundles/datatablesButtonsPrint", "//cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js").Include(
+                "~/Scripts/datatables/datatablesButtonsPrint.js"
+            ));
+            bundles.Add(new ScriptBundle("~/bundles/datatablesResponsive", "//cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js").Include(
+                "~/Scripts/datatables/datatablesResponsive.js"
+            ));
+            bundles.Add(new ScriptBundle("~/bundles/datatablesResponsiveBs4", "//cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js").Include(
+                "~/Scripts/datatables/datatablesResponsiveBs4.js"
+            ));
         }
     }
 }

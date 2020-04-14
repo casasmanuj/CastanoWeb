@@ -1,19 +1,26 @@
-﻿using Castano.Web.Models;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace Castano.Web.Controllers
+﻿namespace Castano.Web.Controllers
 {
+    using Castano.Service;
+    using Castano.Web.Models;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Web.Mvc;
+
     public class EventoController : Controller
     {
+        private readonly IEventoService _eventoService;
+        public EventoController(IEventoService eventoService)
+        {
+            this._eventoService = eventoService;
+        }
         // GET: Evento
         public ActionResult Index()
         {
-            return View();
+            var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Eventos", "eventos.json");
+            var eventos = _eventoService.ListEventos(path);
+            return View(eventos);
         }
 
         // GET: Evento/UploadFile
@@ -26,9 +33,7 @@ namespace Castano.Web.Controllers
         [HttpPost]
         public ActionResult UploadFile(string Password)
         {
-            if(Password != "CAST2458")
-                return View();
-
+            if(Password != "CAST2458") return HttpNotFound();
             
             var file = Request.Files[0];
             if (file != null && file.ContentLength > 0)

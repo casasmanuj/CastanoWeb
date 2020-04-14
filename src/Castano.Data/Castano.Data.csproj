@@ -76,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Evento.cs" />
     <Compile Include="Identity\AppUser.cs" />
     <Compile Include="CastanoContext.cs" />
     <Compile Include="CastanoData.cs" />

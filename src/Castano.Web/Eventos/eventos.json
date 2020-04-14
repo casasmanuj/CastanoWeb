@@ -1,0 +1,332 @@
+[
+  {
+    "dia": "1/6/2016",
+    "cliente": "Sol, HOLIDAY INN EXPRESS",
+    "nombre": "Capacitacion Interna",
+    "salon": "NUEVO BANCO DE SANTA FE"
+  },
+  {
+    "dia": "1/6/2016",
+    "cliente": "SEC. DE TURISMO DE FOZ DO IGUAZU",
+    "nombre": "Road Show",
+    "salon": "Camelot, HOLIDAY INN"
+  },
+  {
+    "dia": "1/6/2016",
+    "cliente": "BAYER",
+    "nombre": "Reunion de Ciclo",
+    "salon": "Mesa Redonda, HOLIDAY INN"
+  },
+  {
+    "dia": "1/6/2016",
+    "cliente": "ISDIN",
+    "nombre": "Seminario Medico",
+    "salon": "Nacion, HOTEL PRESIDENTE"
+  },
+  {
+    "dia": "1/6/2016",
+    "cliente": "SALINAS",
+    "nombre": "Runion interna",
+    "salon": "APART PRINGLES"
+  },
+  {
+    "dia": "2/6/2016",
+    "cliente": "BAYER",
+    "nombre": "Reunion de Ciclo",
+    "salon": "Mesa Redonda, HOLIDAY INN"
+  },
+  {
+    "dia": "2/6/2016",
+    "cliente": "VOLKSWAGEN",
+    "nombre": "Reunion de Capacitacion",
+    "salon": "Camelot, HOLIDAY INN"
+  },
+  {
+    "dia": "2/6/2016",
+    "cliente": "SALINAS",
+    "nombre": "Reunion interna",
+    "salon": "APART PRINGLES"
+  },
+  {
+    "dia": "3/6/2016",
+    "cliente": "CNH",
+    "nombre": "Reunion de Capacitacion",
+    "salon": "Sol, HOLIDAY INN EXPRESS"
+  },
+  {
+    "dia": "3/6/2016",
+    "cliente": "GADOR",
+    "nombre": "ReunionTratamiento de Pyxis Perampanel",
+    "salon": "Lamorak, HOLIDAY INN EXPRESS"
+  },
+  {
+    "dia": "4/6/2016",
+    "cliente": "PARTICULAR",
+    "nombre": "Cumpleaños",
+    "salon": "Lamorak, HOLIDAY INN EXPRESS"
+  },
+  {
+    "dia": "4/6/2016",
+    "cliente": "CONCEPTUAL",
+    "nombre": "Curso Anual de Actualizacion en Nutricion Clinica",
+    "salon": "Nacion, HOTEL PRESIDENTE"
+  },
+  {
+    "dia": "6/6/2016",
+    "cliente": "GLAXO",
+    "nombre": "Actualizaciones en Vacunas",
+    "salon": "Camelot, HOLIDAY INN"
+  },
+  {
+    "dia": "6/6/2016",
+    "cliente": "NATURA",
+    "nombre": "Capacitacion de Consultoras",
+    "salon": "San Martin, HOTEL LIBERTADOR"
+  },
+  {
+    "dia": "7/6/2016",
+    "cliente": "ASOCIART",
+    "nombre": "Nuevo Servicio Web para Productores y Brokers",
+    "salon": "Lamorak, HOLIDAY INN"
+  },
+  {
+    "dia": "7/6/2016",
+    "cliente": "TIMAC AGRO",
+    "nombre": "Reunion de Capacitacion",
+    "salon": "Leonesse, HOLIDAY INN"
+  },
+  {
+    "dia": "7/6/2016",
+    "cliente": "PROCORDOBA",
+    "nombre": "Cena agasajo a los Operadores Extranjeros que participan de la Ronda de Negocios de Agroactiva, Gerente Roberto Rosotto",
+    "salon": "Barcelona, RIVIERA PALACE HOTEL"
+  },
+  {
+    "dia": "8/6/2016",
+    "cliente": "ASOCIART",
+    "nombre": "Nuevo Servicio Web para Productores y Brokers",
+    "salon": "Lamorak, HOLIDAY INN"
+  },
+  {
+    "dia": "9/6/2016",
+    "cliente": "NUEVO BANCO DE SANTA FE",
+    "nombre": "Capacitacion",
+    "salon": "Sol, HOLIDAY INN EXPRESS"
+  },
+  {
+    "dia": "9/6/2016",
+    "cliente": "RAFFO",
+    "nombre": "Reunion Interna",
+    "salon": "Camelot, HOLIDAY INN"
+  },
+  {
+    "dia": "9/6/2016",
+    "cliente": "LOREAL",
+    "nombre": "Actualizacion de Productos",
+    "salon": "Lamorak, HOLIDAY INN"
+  },
+  {
+    "dia": "9/6/2016",
+    "cliente": "PREVENCION",
+    "nombre": "Charla para asociados",
+    "salon": "San Martin, HOTEL LIBERTADOR"
+  },
+  {
+    "dia": "9/6/2016",
+    "cliente": "AAPRECID",
+    "nombre": "Reunion Interna",
+    "salon": "San Martin, HOTEL LIBERTADOR"
+  },
+  {
+    "dia": "9/6/2016",
+    "cliente": "RAFFO",
+    "nombre": "Reunion Interna",
+    "salon": "Camelot, HOLIDAY INN"
+  },
+  {
+    "dia": "10/6/2016",
+    "cliente": "ERREPAR",
+    "nombre": "Ciclo de Actualidad Impositiva, Laboral y Previsional Agropecuaria",
+    "salon": "Lamorak, HOLIDAY INN"
+  },
+  {
+    "dia": "11/6/2016",
+    "cliente": "CONCEPTUAL",
+    "nombre": "Coaching Nutricional Para el Manejo de la Consulta Clinica",
+    "salon": "Lamorak, HOLIDAY INN"
+  },
+  {
+    "dia": "15/6/2016",
+    "cliente": "ARIZMENDI",
+    "nombre": "Capacitacion",
+    "salon": "Leonesse, HOLIDAY INN"
+  },
+  {
+    "dia": "15/6/2016",
+    "cliente": "ASOCIART",
+    "nombre": "Administracion del Tiempo",
+    "salon": "Lamorak, HOLIDAY INN"
+  },
+  {
+    "dia": "15/6/2016",
+    "cliente": "ALLTEC",
+    "nombre": "Reunion de Capacitacion",
+    "salon": "Los Andes, HOTEL LIBERTADOR"
+  },
+  {
+    "dia": "16/6/2016",
+    "cliente": "ASOCIART",
+    "nombre": "Capacitacion sobre Primeros Auxilios y RCP",
+    "salon": "Lamorak, HOLIDAY INN"
+  },
+  {
+    "dia": "16/6/2016",
+    "cliente": "INS GROUP",
+    "nombre": "Reunion Interna",
+    "salon": "Sol, HOLIDAY INN EXPRESS"
+  },
+  {
+    "dia": "16/6/2016",
+    "cliente": "BUNGE",
+    "nombre": "Reunion Interna",
+    "salon": "San Martin, HOTEL LIBERTADOR"
+  },
+  {
+    "dia": "16/6/2016",
+    "cliente": "EMIRATES",
+    "nombre": "Open Day",
+    "salon": "Miranda, ROSTOWER CONVENTION CENTER"
+  },
+  {
+    "dia": "17/6/2016",
+    "cliente": "COOPERATIVA SANTA ROSA",
+    "nombre": "Reunion informativa",
+    "salon": "Los Andes, HOTEL LIBERTADOR"
+  },
+  {
+    "dia": "21/6/2016",
+    "cliente": "MEAD JOHNSON / 2738",
+    "nombre": "Round Table",
+    "salon": "Leonesse, HOLIDAY INN"
+  },
+  {
+    "dia": "21/6/2016",
+    "cliente": "MEADGLAXO",
+    "nombre": "Reunion Interna",
+    "salon": "Lamorak, HOLIDAY INN"
+  },
+  {
+    "dia": "22/6/2016",
+    "cliente": "EXPERTA",
+    "nombre": "Curso de Primeros Auxilios",
+    "salon": "Sol, HOLIDAY INN EXPRESS"
+  },
+  {
+    "dia": "22/6/2016",
+    "cliente": "STOLLER",
+    "nombre": "Formacion Profesional en ventas - Nivel 1",
+    "salon": "Leonesse, HOLIDAY INN"
+  },
+  {
+    "dia": "22/6/2016",
+    "cliente": "YPF",
+    "nombre": "Sumemos + YPF",
+    "salon": "Camelot, HOLIDAY INN"
+  },
+  {
+    "dia": "22/6/2016",
+    "cliente": "NOVARTIS",
+    "nombre": "Diabetes Tipo 2: Otra Mirada Sobre Su Evolucion",
+    "salon": "Lamorak, HOLIDAY INN"
+  },
+  {
+    "dia": "22/6/2016",
+    "cliente": "GLAXO",
+    "nombre": "Reunion Interna",
+    "salon": "Lamorak, HOLIDAY INN"
+  },
+  {
+    "dia": "21/6/2016",
+    "cliente": "MEAD JOHNSON",
+    "nombre": "Round Table",
+    "salon": "Leonesse, HOLIDAY INN"
+  },
+  {
+    "dia": "23/6/2016",
+    "cliente": "IPH",
+    "nombre": "Seminario de Izaje y Cables de Acero",
+    "salon": "Camelot, HOLIDAY INN"
+  },
+  {
+    "dia": "23/6/2016",
+    "cliente": "IPH",
+    "nombre": "Seminario de Izaje y Cables de Acero",
+    "salon": "Camelot, HOLIDAY INN"
+  },
+  {
+    "dia": "23/6/2016",
+    "cliente": "PREVENCION",
+    "nombre": "Charla para asociados",
+    "salon": "Los Andes, HOTEL LIBERTADOR"
+  },
+  {
+    "dia": "23/6/2016",
+    "cliente": "SAP",
+    "nombre": "Revolucion Digital: Cual es el impacto en la Gestion de tu Negocio, estas listo?",
+    "salon": "Sevilla, RIVIERA PALACE HOTEL"
+  },
+  {
+    "dia": "24/6/2016",
+    "cliente": "RAFFO",
+    "nombre": "Jornada Post EHA",
+    "salon": "Camelot, HOLIDAY INN"
+  },
+  {
+    "dia": "24/6/2016",
+    "cliente": "SANDALS",
+    "nombre": "Seminario de Capacitacion 2016",
+    "salon": "Consular, HOTEL PRESIDENTE"
+  },
+  {
+    "dia": "27/6/2016",
+    "cliente": "NATURA",
+    "nombre": "Capacitacion de Consultoras",
+    "salon": "San Martin, HOTEL LIBERTADOR"
+  },
+  {
+    "dia": "27/6/2016",
+    "cliente": "AUDINEC",
+    "nombre": "Reunion Interna",
+    "salon": "San Martin, HOTEL LIBERTADOR"
+  },
+  {
+    "dia": "28/6/2016",
+    "cliente": "BEIERSDORF",
+    "nombre": "Cepacitacion EUCERIN para Dermoconsejeras",
+    "salon": "Lamorak, HOLIDAY INN"
+  },
+  {
+    "dia": "28/6/2016",
+    "cliente": "VISTAGE",
+    "nombre": "Reunion informativa",
+    "salon": "San Martin, HOTEL LIBERTADOR"
+  },
+  {
+    "dia": "29/6/2016",
+    "cliente": "SIEMMENS",
+    "nombre": "Lanzamiento Simatic PCS7 v8.2",
+    "salon": "Lamorak, HOLIDAY INN"
+  },
+  {
+    "dia": "29/6/2016",
+    "cliente": "PHOENIX",
+    "nombre": "Neumoterol: Estudio de Equivalencia Terapeutica",
+    "salon": "Camelot, HOLIDAY INN"
+  },
+  {
+    "dia": "29/6/2016",
+    "cliente": "AAPRECID",
+    "nombre": "Reunion Interna",
+    "salon": "Los Andes, HOTEL LIBERTADOR"
+  }
+]

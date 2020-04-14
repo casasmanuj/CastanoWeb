@@ -46,6 +46,7 @@ namespace Castano.Web
                 //.RegisterType<IDbContext, OracleDataContext>(new PerRequestLifetimeManager(), new InjectionConstructor("OracleData"))
                 //.RegisterType<IData, OracleData>(new InjectionConstructor(new ResolvedParameter<CastanoContext>()))
                 .RegisterType<IEnvioMailService, EnvioMailService>()
+                .RegisterType<IEventoService, EventoService>()
                 .RegisterType<ICastanoData, CastanoData>();
         }
     }
